@@ -38,7 +38,7 @@
     }
 
     #section-{{forloop.index}} .picture{
-      aspect-ratio: {{block.img_aspect}};
+      aspect-ratio: {% include logic/aspect-logic.html aspect = block.img_aspect %} ;
       align-self:center;
       order:2;
       flex:1 1 45%;
