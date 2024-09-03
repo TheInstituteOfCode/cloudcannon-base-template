@@ -137,11 +137,9 @@ _structures:
           bottom-space-padding: 5vw
           color-scheme: dark
       - label: Split banner
-        values: 
+        value: 
           _id: banner-split
-          block-content-html: >-
-            <p>dan was here :D</p><p></p><h2 class="larger-heading">And it was
-            epic</h2>
+          block-content-html:
           background-desktop-image: https://picsum.photos/id/1023/600/400
           background-mobile-image: https://picsum.photos/id/1024/600/400
           background-alt: bg-alt
@@ -159,7 +157,7 @@ _structures:
       - label: Video banner
         value:
           _id: banner-video
-          block-content-html: <p>dan was here :D</p>
+          block-content-html: 
           videos:
             - video_path: /uploads/sea-24216-360p.mp4
               video_type: mp4
@@ -182,12 +180,12 @@ _structures:
       - label: Accordion 
         value:
           _id: accordion
-          block-content-html: <p>dan was here :D</p><p></p><h2>And it was epic</h2>
+          block-content-html: 
           drop_down:
             button-text: Where is dan
             icon_path: https://picsum.photos/id/1023/600/400
             icon_alt: bike
-            block-content-html: <p>dan was here :D</p><p>dan was here :D</p><p>dan was here :D</p><p>dan was here :D</p>
+            block-content-html: 
           color-scheme: dark  
   columns:
     style: modal
@@ -203,7 +201,7 @@ _structures:
       - label: Text Block
         value:
           col-type: text
-          block-content-html: <p>dan was here :D</p>
+          block-content-html: 
           icon-path:
           icon-alt:
           color-scheme: featured
