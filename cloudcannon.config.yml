@@ -128,7 +128,7 @@ _structures:
     values:
       - label: Image
         value:
-        - col-type: img
+          col-type: img
           image: https://picsum.photos/id/1023/600/400
           image_alt:
           img-ratio: 1
@@ -136,7 +136,7 @@ _structures:
           col-height: 2
       - label: Text Block
         value:
-        - col-type: text
+          col-type: text
           heading: Heading text
           para: Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae cupiditate eaque voluptatibus et aut assumenda dolores saepe voluptatem non dolorem corporis eveniet suscipit vitae minima, veritatis obcaecati ducimus distinctio magnam!
           color-scheme: featured
