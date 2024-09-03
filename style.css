@@ -1,0 +1,52 @@
+/* ----------- Color Variables --------- */
+/* Looking for the color variables? They have been moved to the inline-styles file in the _includes folder, and pull variables from the site-settings folder in the _data folder.  */
+
+/* Tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+*{
+    padding: 0%;
+    margin: 0;
+    box-sizing: 0;
+}
+
+img{max-width: 100%;}
+
+section,header,footer{
+    padding: var(--vert-gap) var(--side-gap);
+    background-size: cover;
+    background-position: center;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+}
+
+.max-width{ 
+    max-width: var(--max-width);
+    margin: auto;
+}
+
+.color-set{
+    color: var(--text-color);
+    background-color: var(--bg-color);
+}
+
+
+
+/* custom grid */
+
+.col-w-2{grid-column:span 2;}
+.col-w-3{grid-column:span 3;}
+.col-w-4{grid-column:span 4;}
+.col-w-5{grid-column:span 5;}
+.col-w-6{grid-column:span 6;}
+
+.col-h-2{grid-row: span 2 ;}
+.col-h-3{grid-row: span 3 ;}
+.col-h-4{grid-row: span 4 ;}
+.col-h-5{grid-row: span 5 ;}
+.col-h-6{grid-row: span 6 ;}
+.col-h-7{grid-row: span 7 ;}

@@ -1,0 +1,122 @@
+paths:
+  uploads: uploads
+  static: ''
+  dam_uploads: ''
+  dam_static: ''
+  collections: ''
+  data: _data
+  layouts: _layouts
+  includes: _includes
+collections_config:
+  pages:
+    path: ''
+    output: true
+    filter: strict
+    description: ''
+    icon: notes
+    _editables:
+    _inputs:
+    _select_data:
+    _structures:
+    disable_add: false
+    disable_add_folder: false
+    disable_file_actions: false
+    schemas:
+      default page:
+        path:
+        reorder_inputs: true
+        hide_extra_inputs: false
+        remove_empty_inputs: false
+        remove_extra_inputs: true
+        name:
+        icon: notes
+        preview:
+        _editables:
+        _inputs:
+        _select_data:
+        _structures:
+        create:
+        new_preview_url:
+_inputs:
+  layout:
+    type: text
+    hidden: true
+    cascade: true
+  col-type:
+    type: text
+    hidden: true
+  block-content-html:
+    type: html
+    options:
+      allow_resize: true
+      allow_custom_markup: false
+      remove_custom_markup: false
+      initial_height: 320
+      center: text-center
+      format: p h2 h3 a img
+      horizontalrule: true
+      image: true
+      image_size_attributes: true
+      left: text-left
+      link: true
+      right: text-right
+      styles: /editor.css
+    cascade: true
+  min-height:
+    type: select
+    cascade: true
+    option:
+      values:
+        50vh: half screen min-min
+        75vh: three quater screen min-min
+        90vh: just short of full screen
+        100vh: full screen
+  text-alignment:
+    type: select
+    options:
+      allow_empty: true
+      values:
+        - left
+        - center
+        - right
+  vert-alignment:
+    type: select
+    options:
+      allow_empty: true
+      values:
+        - top
+        - middle
+        - bottom
+    cascade: true
+  img_apsect:
+    type: select
+    options:
+      allow_empty: false
+      values:
+        '1': Square
+        9/16: tall Portraight
+        4/5: Portraight
+        5/4: Landscape
+        16/9: wide Landscape
+        initial: Images Native
+_structures:
+  blocks:
+    style: modal
+    values:
+      - label: Simple banner
+        value:
+          _id: banner
+          color-scheme: dark
+          block-content-html: dan was here :D
+          background-desktop-image: https://picsum.photos/id/1023/600/400
+          background-mobile-image: https://picsum.photos/id/1024/600/400
+          text-alignment: center
+          vert-alignment: middle
+          overlay-color: black
+          overlay-opacity: .5
+          min-height: 90vh
+          top-space-collapse: false
+          bottom-space-collapse: false
+
+data_config: {}
+timezone: Etc/UTC

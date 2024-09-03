@@ -1,0 +1,49 @@
+
+<section class="{% if block.top-space-collapse  == true %} pt-0 {% endif %} {% if block.bottom-space-collapse  == true %} pb-0 {% endif %}">
+      <div class="max-width grid">
+          {% for col in block.columns %}
+            <div class="col-w-{{col.col-width}} col-h-{{col.col-height}} relative {% if col.color-scheme %} {{col.color-scheme}} {% endif %}">
+                <!-- {{col.col-type}} -->
+                {% case col.col-type %}
+                {% when 'img' %}
+                <div style="aspect-ratio: {{col.img-ratio}};">
+                    <img class="object-cover object-center inset-0 absolute w-full h-full" src="{{col.image}}" alt="{{col.image_alt}}">
+                </div>
+                {% when 'text' %}
+                <div class="color-set" >
+                    {% if col.heading %}
+                    <h3>{{col.heading}}</h3>
+                    {% endif %}
+                    {% if col.para %}
+                    <p>{{col.para}}</p>
+                    {% endif %}
+                </div>
+                {% endcase %}
+            </div>
+          {% endfor %}
+    </div>
+</section>
+
+<style>
+    #section-{{forloop.index}} .grid {
+        gap: {{block.grid-gap}};
+      grid-template-columns: repeat({% if block.grid-mobile-column %} {{block.grid-mobile-column}} {% else %} {{block.grid-desktop-columns}} {% endif %}, 1fr);
+    }
+
+    #section-{{forloop.index}} .color-set{
+        padding: 0 calc( {{block.grid-gap}} / 2);
+    }
+
+
+
+    {% if block.background-mobile-image %} {% if block.background-desktop-image %}
+    @media (min-width: 765px) {
+      #section-{{forloop.index}} section {
+        
+        background-image: url( {{block.background-desktop-image}} );
+      }
+    }
+    {% endif %} {% endif %}
+
+
+  </style>

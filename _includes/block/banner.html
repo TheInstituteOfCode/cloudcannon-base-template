@@ -1,0 +1,48 @@
+
+<section class="{% if block.top-space-collapse  == true %} pt-0 {% endif %} {% if block.bottom-space-collapse  == true %} pb-0 {% endif %} flex         
+{% case block.vert-alignment %}
+{% when 'top' %}
+items-start
+{% when 'middle' %}
+items-center
+{% when 'bottom' %}
+items-end
+{% endcase %}
+
+{% case block.text-alignment %}
+{% when 'left' %}
+justify-start
+{% when 'center' %}
+justify-center
+{% when 'right' %}
+justify-end
+{% endcase %}" style="text-align: {{block.text-alignment}}
+">
+      <div class="max-width ">
+          <div class=";{% if block.content-max-width %}max-width: {{block.content-max-width}} {% endif %}">
+            {{block.block-content-html}}
+          </div>
+    </section>
+
+    <style>
+      #section-{{forloop.index}} section {
+        background-image: url({% if block.background-mobile-image %} {{block.background-mobile-image}} {% else %} {{block.background-desktop-image}} {% endif %});
+        min-height: {{block.min-height}};
+      }
+
+      #section-{{forloop.index}} section::before {
+        background-color: {{block.overlay-color}};
+        opacity: {{block.overlay-opacity}}
+      }
+
+      {% if block.background-mobile-image %} {% if block.background-desktop-image %}
+      @media (min-width: 765px) {
+        #section-{{forloop.index}} section {
+          
+          background-image: url( {{block.background-desktop-image}} );
+        }
+      }
+      {% endif %} {% endif %}
+
+
+    </style>

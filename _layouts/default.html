@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" class="hide-scrollbars">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>oshombali</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/x-icon" href="/uploads/favicon.png">
+
+
+    
+<link rel="stylesheet" href="/editor.css">
+<link rel="stylesheet" href="/assets/css/style.css">
+
+<style>
+    :root{
+        --max-width: {{site.data.style.max-width}}px;
+        --side-gap: {{site.data.style.horizontal-padding}};
+        --vert-gap: {{site.data.style.vertical-padding}};
+    }
+    :root,{% for scheme in site.data.style.schemes %}
+        .scheme-{{scheme.scheme_name}} {
+            --bg-color: {{scheme.bg-color}};
+            --text-color: {{scheme.text-color}};
+            --colored-button-bg: {{scheme.colored-button-bg-color}};
+            --colored-button-text: {{scheme.colored-button-text-color}};
+        }
+    {% endfor %}
+
+</style>
+
+
+</head>
+
+<body>
+    {% for block in page.blocks %}
+        <div class="scheme-{{block.color-scheme}}" id="section-{{forloop.index}}">
+            {% comment %} to figure out what block you added in inspect {% endcomment %}
+            <!--{{block._id}} -->
+            {% include /block/{{block._id}}.html %}
+        </div>
+    {% endfor %}
+</body>
