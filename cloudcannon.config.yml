@@ -45,6 +45,7 @@ _inputs:
   col-type:
     type: text
     hidden: true
+    cascade: true
   block-content-html:
     type: html
     options:
@@ -61,16 +62,18 @@ _inputs:
       link: true
       right: text-right
       styles: /editor.css
+    label: Content
     cascade: true
   min-height:
     type: select
-    cascade: true
     options:
+      allow_empty: true
       values:
         50vh: half screen min-min
         75vh: three quater screen min-min
         90vh: just short of full screen
         100vh: full screen
+    cascade: true
   text-alignment:
     type: select
     options:
@@ -79,6 +82,7 @@ _inputs:
         - left
         - center
         - right
+    cascade: true
   vert-alignment:
     type: select
     options:
@@ -99,9 +103,10 @@ _inputs:
         5/4: Landscape
         16/9: wide Landscape
         initial: Images Native
+    cascade: true
 _structures:
   blocks:
-    # style: modal
+    style: select
     values:
       - label: Simple banner
         value:
@@ -113,7 +118,7 @@ _structures:
           text-alignment: center
           vert-alignment: middle
           overlay-color: black
-          overlay-opacity: .5
+          overlay-opacity: 0.5
           min-height: 90vh
           top-space-padding: 10vw
           bottom-space-padding: 5vw
@@ -128,7 +133,7 @@ _structures:
           text-alignment: center
           vert-alignment: middle
           overlay-color: black
-          overlay-opacity: .5
+          overlay-opacity: 0.5
           min-height: 90vh
           top-space-padding: 10vw
           bottom-space-padding: 5vw
@@ -139,12 +144,13 @@ _structures:
           grid-mobile-columns: 2
           grid-gap: 1rem
           columns:
-      - label: Accordion 
+      - label: Accordion
         value:
           _id: accordion
           drop_down:
-            - 
+            -
   columns:
+    style: select
     values:
       - label: Image
         value:
