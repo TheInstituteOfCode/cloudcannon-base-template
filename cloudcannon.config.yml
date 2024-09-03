@@ -137,7 +137,7 @@ _structures:
           bottom-space-padding: 5vw
           color-scheme: dark
       - label: Split banner
-      values: 
+        values: 
           _id: banner-split
           block-content-html: >-
             <p>dan was here :D</p><p></p><h2 class="larger-heading">And it was
