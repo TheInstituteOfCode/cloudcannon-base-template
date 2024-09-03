@@ -1,6 +1,12 @@
 
 <section class="py-0" style="text-align: {{block.text-alignment}}
 ">
+    <video class="absolute inset-0 object-cover object-center" src="" controls="flase" autoplay="true" muted>
+      {% for video in block.videos %}
+      <source src="{{video.video_path}}" type="video/{{video.video_type}}">
+      {% endfor %}
+    Your browser does not support the video tag.
+    </video>
       <div class="max-width {% if block.overlay-opacity > 0 %}relative z-10{% endif %}
         flex         
         {% case block.vert-alignment %}
@@ -21,12 +27,7 @@
         justify-end
         {% endcase %}
         ">
-          <video class="absolute inset-0 object-cover object-center" src="" controls="flase" autoplay="true" muted>
-            {% for video in block.videos %}
-            <source src="{{video.video_path}}" type="video/{{video.video_type}}">
-            {% endfor %}
-          Your browser does not support the video tag.
-          </video>
+
           <div class="{% if block.content-max-width %}max-width: {{block.content-max-width}} {% endif %}">
             {{block.block-content-html}}
           </div>
@@ -51,7 +52,7 @@
       }
 
       {% if block.overlay-opacity > 0 %}
-      #section-{{forloop.index}} section::before {
+      #section-{{forloop.index}} section::after {
         content: " ";
         position: absolute;
         top: 0;
