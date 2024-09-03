@@ -124,7 +124,7 @@ _structures:
           grid-mobile-columns: 2
           grid-gap: 1rem
           columns:
-  columns: 
+  columns:
     values:
       - label: Image
         value:
