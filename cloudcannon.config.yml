@@ -131,7 +131,7 @@ _structures:
           col-type: img
           image: https://picsum.photos/id/1023/600/400
           image_alt:
-          img-ratio: 1
+          img_apsect: 1
           col-width: 2
           col-height: 2
       - label: Text Block

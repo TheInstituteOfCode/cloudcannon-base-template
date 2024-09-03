@@ -19,18 +19,9 @@
           <!-- {{col.col-type}} -->
                 {% case col.col-type %}
                 {% when 'img' %}
-                <div style="aspect-ratio: {{col.img-ratio}};">
-                    <img class="object-cover object-center inset-0 absolute w-full h-full" src="{{col.image}}" alt="{{col.image_alt}}">
-                </div>
+                  {% include /snippets/col-img.html %}
                 {% when 'text' %}
-                <div class="color-set" >
-                    {% if col.heading %}
-                    <h3>{{col.heading}}</h3>
-                    {% endif %}
-                    {% if col.para %}
-                    <p>{{col.para}}</p>
-                    {% endif %}
-                </div>
+                  {% include /snippets/col-text.html %}
                 {% endcase %}
             </div>
           {% endfor %}
