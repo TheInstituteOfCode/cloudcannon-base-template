@@ -101,7 +101,7 @@ _inputs:
         initial: Images Native
 _structures:
   blocks:
-    style: modal
+    # style: modal
     values:
       - label: Simple banner
         value:
@@ -117,6 +117,24 @@ _structures:
           min-height: 90vh
           top-space-collapse: false
           bottom-space-collapse: false
-
+      - _id: grid
+        grid-desktop-columns: 4
+        grid-mobile-columns: 2
+        grid-gap: 1rem
+        columns:
+  columns: 
+    values:
+      - col-type: img
+        image: https://picsum.photos/id/1023/600/400
+        image_alt:
+        img-ratio: 1
+        col-width: 2
+        col-height: 2
+      - col-type: text
+        heading: Heading text
+        para: Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae cupiditate eaque voluptatibus et aut assumenda dolores saepe voluptatem non dolorem corporis eveniet suscipit vitae minima, veritatis obcaecati ducimus distinctio magnam!
+        color-scheme: featured
+        col-width: 1
+        col-height: 1
 data_config: {}
 timezone: Etc/UTC
