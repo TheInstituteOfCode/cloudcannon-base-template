@@ -46,4 +46,36 @@ blocks:
         top-space-padding: 10vw
         bottom-space-padding: 5vw
         color-scheme: featured
+    -
+        _id: grid
+        grid-desktop-columns: 4
+        grid-mobile-columns: 2
+        grid-gap: 1rem
+        columns:
+            -
+                col-type: video
+                videos:
+                    -
+                        video_path: /uploads/sea-24216-360p.mp4
+                        video_type: mp4
+                video_controls: true
+                video_autoplay: false
+                img_aspect: Square
+                col-width: 2
+            -
+                col-type: text
+                block-content-html: <p>quick text</p>
+                icon-path:
+                icon-alt:
+                color-scheme: featured
+                col-width: 2
+                col-height: 1
+            -
+                col-type: img
+                image: https://picsum.photos/id/1023/600/400
+                image_alt:
+                img_aspect: Wide Landscape
+                col-width: 1
+                col-height: 2
+        color-scheme: dark
 ---
