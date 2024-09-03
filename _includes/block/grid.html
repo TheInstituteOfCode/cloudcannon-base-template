@@ -2,25 +2,21 @@
 <section class="{% if block.top-space-collapse  == true %} pt-0 {% endif %} {% if block.bottom-space-collapse  == true %} pb-0 {% endif %}">
       <div class="max-width grid">
           {% for col in block.columns %}
+          
             <div class="
+
             {% assign colWidth = col.col-width %}
-              <!-- base {{colWidth}} -->
-            {% if colWidth >= grid-desktop-columns %}
-                {% assign colWidth = grid-desktop-columns %}
-                <!-- max desk  {{colWidth}} -->
-            {% endif %}
-            
-            {% if colWidth >= grid-mobile-columns %}
-                {% assign colWidth = grid-mobile-columns %}
-                <!-- max mobile  {{colWidth}} -->
 
-            {% endif %}
-
-            col-w-{{block.grid-desktop-columns}} {% else %} col-w-{{col.col-width}} {% endif %}
-            {% if col.width >= grid-mobile-columns %} col-w-{{block.grid-mobile-columns}} {% endif %}
-            
-            col-h-{{col.col-height}} relative {% if col.color-scheme %} scheme-{{col.color-scheme}} {% endif %}  ">
-                <!-- {{col.col-type}} -->
+          {% if colWidth > block.grid-desktop-columns %}
+              {% assign colWidth = block.grid-desktop-columns %}
+              {% endif %}
+              col-w-{{colWidth}}
+          {% if colWidth >= block.grid-mobile-columns %}
+          {% assign colWidth = block.grid-mobile-columns %}
+            mob-col-w-{{colWidth}}
+          {% endif %}
+          col-h-{{col.col-height}} relative {% if col.color-scheme %} scheme-{{col.color-scheme}} {% endif %}  ">
+          <!-- {{col.col-type}} -->
                 {% case col.col-type %}
                 {% when 'img' %}
                 <div style="aspect-ratio: {{col.img-ratio}};">
@@ -44,7 +40,7 @@
 <style>
     #section-{{forloop.index}} .grid {
         gap: {{block.grid-gap}};
-      grid-template-columns: repeat({{block.grid-mobile-column}}, 1fr);
+      grid-template-columns: repeat({{block.grid-mobile-columns}}, 1fr);
     }
 
     #section-{{forloop.index}} .color-set{
