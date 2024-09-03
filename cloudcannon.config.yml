@@ -120,7 +120,7 @@ _inputs:
     cascade: true
 _structures:
   blocks:
-    style: select
+    style: modal
     values:
       - label: Simple banner
         value:
@@ -190,7 +190,7 @@ _structures:
             block-content-html: <p>dan was here :D</p><p>dan was here :D</p><p>dan was here :D</p><p>dan was here :D</p>
           color-scheme: dark  
   columns:
-    style: select
+    style: modal
     values:
       - label: Image
         value:
