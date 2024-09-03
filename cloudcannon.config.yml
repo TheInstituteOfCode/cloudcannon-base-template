@@ -166,6 +166,8 @@ _structures:
         value:
           col-type: text
           block-content-html: <p>dan was here :D</p>
+          icon-path:
+          icon-alt:
           color-scheme: featured
           col-width: 1
           col-height: 1
