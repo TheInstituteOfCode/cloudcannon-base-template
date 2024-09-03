@@ -1,0 +1,9 @@
+{% assign colWidth = col.col-width %}
+
+{% if colWidth >= grid-desktop-columns %}
+    {% assign colWidth = grid-desktop-columns %}
+{% endif %}
+
+{% if colWidth >= grid-mobile-columns %}
+    {% assign colWidth = grid-mobile-columns %}
+{% endif %}

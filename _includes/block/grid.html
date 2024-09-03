@@ -2,7 +2,24 @@
 <section class="{% if block.top-space-collapse  == true %} pt-0 {% endif %} {% if block.bottom-space-collapse  == true %} pb-0 {% endif %}">
       <div class="max-width grid">
           {% for col in block.columns %}
-            <div class="col-w-{{col.col-width}} col-h-{{col.col-height}} relative {% if col.color-scheme %} scheme-{{col.color-scheme}} {% endif %}">
+            <div class="
+            {% assign colWidth = col.col-width %}
+              <!-- base {{colWidth}} -->
+            {% if colWidth >= grid-desktop-columns %}
+                {% assign colWidth = grid-desktop-columns %}
+                <!-- max desk  {{colWidth}} -->
+            {% endif %}
+            
+            {% if colWidth >= grid-mobile-columns %}
+                {% assign colWidth = grid-mobile-columns %}
+                <!-- max mobile  {{colWidth}} -->
+
+            {% endif %}
+
+            col-w-{{block.grid-desktop-columns}} {% else %} col-w-{{col.col-width}} {% endif %}
+            {% if col.width >= grid-mobile-columns %} col-w-{{block.grid-mobile-columns}} {% endif %}
+            
+            col-h-{{col.col-height}} relative {% if col.color-scheme %} scheme-{{col.color-scheme}} {% endif %}  ">
                 <!-- {{col.col-type}} -->
                 {% case col.col-type %}
                 {% when 'img' %}
@@ -27,7 +44,7 @@
 <style>
     #section-{{forloop.index}} .grid {
         gap: {{block.grid-gap}};
-      grid-template-columns: repeat({% if block.grid-mobile-column %} {{block.grid-mobile-column}} {% else %} {{block.grid-desktop-columns}} {% endif %}, 1fr);
+      grid-template-columns: repeat({{block.grid-mobile-column}}, 1fr);
     }
 
     #section-{{forloop.index}} .color-set{
@@ -35,7 +52,12 @@
     }
 
 
-
+    @media (min-width: 765px) {
+      #section-{{forloop.index}} .grid {
+        gap: {{block.grid-gap}};
+      grid-template-columns: repeat({{block.grid-desktop-columns}}, 1fr);
+    }
+    }
     {% if block.background-mobile-image %} {% if block.background-desktop-image %}
     @media (min-width: 765px) {
       #section-{{forloop.index}} section {
