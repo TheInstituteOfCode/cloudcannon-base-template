@@ -1,26 +1,6 @@
 
-<section class="py-0" style="text-align: {{block.text-alignment}}
-">
-      <div class="max-width {% if block.overlay-opacity > 0 %}relative z-10{% endif %}
-        flex         
-        {% case block.vert-alignment %}
-        {% when 'top' %}
-        items-start
-        {% when 'middle' %}
-        items-center
-        {% when 'bottom' %}
-        items-end
-        {% endcase %}
-
-        {% case block.text-alignment %}
-        {% when 'left' %}
-        justify-start
-        {% when 'center' %}
-        justify-center
-        {% when 'right' %}
-        justify-end
-        {% endcase %}
-        ">
+<section>
+      <div class="max-width">
           <div class="{% if block.content-max-width %}max-width: {{block.content-max-width}} {% endif %}">
             {{block.block-content-html}}
           </div>

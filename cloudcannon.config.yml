@@ -106,7 +106,6 @@ _structures:
       - label: Simple banner
         value:
           _id: banner
-          color-scheme: dark
           block-content-html: <p>dan was here :D</p>
           background-desktop-image: https://picsum.photos/id/1023/600/400
           background-mobile-image: https://picsum.photos/id/1024/600/400
@@ -117,10 +116,10 @@ _structures:
           min-height: 90vh
           top-space-padding: 10vw
           bottom-space-padding: 5vw
+          color-scheme: dark
       - label: Video banner
         value:
           _id: banner-video
-          color-scheme: dark
           block-content-html: <p>dan was here :D</p>
           videos:
             - video_path: /uploads/sea-24216-360p.mp4
@@ -132,6 +131,7 @@ _structures:
           min-height: 90vh
           top-space-padding: 10vw
           bottom-space-padding: 5vw
+          color-scheme: dark
       - label: Grid
         value:
           _id: grid
@@ -139,11 +139,13 @@ _structures:
           grid-mobile-columns: 2
           grid-gap: 1rem
           columns:
+          color-scheme: dark
       - label: Accordion 
         value:
           _id: accordion
           drop_down:
             - 
+          color-scheme: dark
   columns:
     values:
       - label: Image
