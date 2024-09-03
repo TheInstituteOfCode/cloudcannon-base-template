@@ -1,0 +1,8 @@
+<video width="320" height="240" class="absolute inset-0 h-full w-full object-cover object-center"{% if col.video_controls %} controls="{{col.video_controls}}"{% endif %} {% if col.video_autoplay %} autoplay="" muted{% endif %}>
+    {% for video in col.videos %}
+    <source src="{{video.video_path}}" type="video/{{video.video_type}}">
+    {% endfor %}
+  Your browser does not support the video tag.
+</video>
+
+false

@@ -15,13 +15,15 @@
           {% assign colWidth = block.grid-mobile-columns %}
             mob-col-w-{{colWidth}}
           {% endif %}
-          col-h-{{col.col-height}} relative {% if col.color-scheme %} scheme-{{col.color-scheme}} {% endif %}  ">
+          col-h-{{col.col-height}} relative {% if col.color-scheme %} scheme-{{col.color-scheme}} {% endif %}  " style="aspect-ratio: {{col.img_apsect}} ;">
           <!-- {{col.col-type}} -->
                 {% case col.col-type %}
                 {% when 'img' %}
                   {% include /snippets/col-img.html %}
                 {% when 'text' %}
                   {% include /snippets/col-text.html %}
+                {% when 'video' %}
+                {% include /snippets/col-video.html %}
                 {% endcase %}
             </div>
           {% endfor %}

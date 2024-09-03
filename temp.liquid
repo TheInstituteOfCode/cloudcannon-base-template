@@ -7,3 +7,5 @@
 {% if colWidth >= grid-mobile-columns %}
     {% assign colWidth = grid-mobile-columns %}
 {% endif %}
+
+{{block.section-gap |  divided_by: 2}}

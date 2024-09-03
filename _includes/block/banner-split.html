@@ -1,0 +1,78 @@
+
+<section class="px-0 flex" >
+      <div class="picture relative">
+        <picture >
+          <source srcset="{{block.background-desktop-image}}" media="(min-width: 750px)" />
+          <img class="absolute inset-0 h-full w-full object-cover object-center" src="{{block.background-mobile-image}}" alt="{{block.background-alt}}" />
+        </picture>
+        
+      </div>
+      <div class=" text-block">
+        {{block.block-content-html}}
+      </div>
+    </section>
+
+    <style>
+
+    #section-{{forloop.index}} section{
+      gap: {{block.section-gap}}
+    }
+
+    #section-{{forloop.index}} .text-block {
+      flex: 1 1 45%;
+      text-align: {{block.text-alignment}};
+      align-self: {% case block.vert-alignment %}
+        {% when 'top' %}
+        self-start
+        {% when 'middle' %}
+        self-center
+        {% when 'bottom' %}
+        self-end
+        {% endcase %};
+      {% if block.desktop-image-position == 'right' %}
+          padding-left: var(--side-gap);
+        {% else %}
+          padding-right: var(--side-gap);
+          order:3;
+      {% endif %}
+    }
+
+    #section-{{forloop.index}} .picture{
+      aspect-ratio: {{block.img_apsect}};
+      align-self:center;
+      order:2;
+      flex:1 1 45%;
+
+      {% if block.desktop-collapse-bg-padding == false %}
+         {% if block.desktop-image-position == 'left' %}
+          margin-left: var(--side-gap);
+          {% else %}
+          margin-right: var(--side-gap);
+         {% endif %}
+      {% endif %}
+    }
+
+    @media (max-width: 750px) {
+      #section-{{forloop.index}} section{
+        flex-direction: column;
+      }
+      #section-{{forloop.index}} .text-block{
+        {% if block.mobile-image-position == 'bottom' %}
+          order: 1;
+        {% else %}
+          order:3;
+      {% endif %}
+      }
+      #section-{{forloop.index}} .picture{
+
+        {% if block.mobile-collapse-bg-padding == false %}
+        width: calc(100vw - calc( var(--side-gap) * 2));
+        {% else %}
+        width: 100vw;
+       {% endif %} 
+      }
+
+    }
+
+      
+    </style>

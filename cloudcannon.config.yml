@@ -77,19 +77,33 @@ _inputs:
   text-alignment:
     type: select
     options:
-      allow_empty: true
+      allow_empty: false
       values:
         - left
         - center
         - right
     cascade: true
+  desktop-image-position: 
+    type: select
+    options:
+      allow_empty: false
+      values:
+        - left
+        - right
   vert-alignment:
     type: select
     options:
-      allow_empty: true
+      allow_empty: false
       values:
         - top
         - middle
+        - bottom
+  vert-alignment:
+    type: select
+    options:
+      allow_empty: false
+      values:
+        - top
         - bottom
     cascade: true
   img_apsect:
@@ -119,6 +133,26 @@ _structures:
           overlay-color: black
           overlay-opacity: 0.5
           min-height: 90vh
+          top-space-padding: 10vw
+          bottom-space-padding: 5vw
+          color-scheme: dark
+      - label: Split banner
+      values: 
+          _id: banner-split
+          block-content-html: >-
+            <p>dan was here :D</p><p></p><h2 class="larger-heading">And it was
+            epic</h2>
+          background-desktop-image: https://picsum.photos/id/1023/600/400
+          background-mobile-image: https://picsum.photos/id/1024/600/400
+          background-alt: bg-alt
+          desktop-collapse-bg-padding: true
+          desktop-image-position: 'left'
+          section-gap: 1rem
+          text-alignment: center
+          vert-alignment: bottom
+          mobile-image-position: bottom
+          mobile-collapse-bg-padding: false
+          img_apsect: 1
           top-space-padding: 10vw
           bottom-space-padding: 5vw
           color-scheme: dark
@@ -175,5 +209,15 @@ _structures:
           color-scheme: featured
           col-width: 1
           col-height: 1
+      - label: video
+        value:
+          col-type: video
+          videos: 
+            - video_path: /uploads/sea-24216-360p.mp4
+              video_type: mp4
+          video_controls: false
+          video_autoplay: true
+          img_apsect: 4/5
+          col-width: 1
 data_config: {}
 timezone: Etc/UTC

@@ -69,6 +69,12 @@ section,header,footer{
 .col-h-7{grid-row: span 7 ;}
 
 
+/* split banner */
+
+.picture picture{
+    
+}
+
 /* accordian */
 .drop-sec{
     overflow: hidden;

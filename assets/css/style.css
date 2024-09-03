@@ -450,6 +450,9 @@ video {
 .h-full {
   height: 100%;
 }
+.min-h-full {
+  min-height: 100%;
+}
 .w-full {
   width: 100%;
 }
@@ -471,6 +474,15 @@ video {
 .justify-center {
   justify-content: center;
 }
+.self-start {
+  align-self: flex-start;
+}
+.self-end {
+  align-self: flex-end;
+}
+.self-center {
+  align-self: center;
+}
 .border {
   border-width: 1px;
 }
@@ -481,6 +493,10 @@ video {
 .object-center {
   -o-object-position: center;
      object-position: center;
+}
+.px-0 {
+  padding-left: 0px;
+  padding-right: 0px;
 }
 .py-0 {
   padding-top: 0px;
@@ -565,6 +581,12 @@ section,header,footer{
 .col-h-6{grid-row: span 6 ;}
 .col-h-7{grid-row: span 7 ;}
 
+
+/* split banner */
+
+.picture picture{
+    
+}
 
 /* accordian */
 .drop-sec{
