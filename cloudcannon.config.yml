@@ -115,8 +115,8 @@ _structures:
           overlay-color: black
           overlay-opacity: .5
           min-height: 90vh
-          top-space-collapse: false
-          bottom-space-collapse: false
+          top-space-padding: 10vw
+          bottom-space-padding: 5vw
       - label: Grid
         value:
           _id: grid

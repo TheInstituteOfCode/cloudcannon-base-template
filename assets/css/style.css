@@ -432,6 +432,9 @@ video {
 .inset-0 {
   inset: 0px;
 }
+.z-10 {
+  z-index: 10;
+}
 .block {
   display: block;
 }
@@ -473,6 +476,13 @@ video {
   -o-object-position: center;
      object-position: center;
 }
+.p-0 {
+  padding: 0px;
+}
+.py-0 {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
 .pb-0 {
   padding-bottom: 0px;
 }
@@ -496,6 +506,10 @@ section,header,footer{
     background-position: center;
     color: var(--text-color);
     background-color: var(--bg-color);
+}
+
+.standard-padding{
+    padding: var(--vert-gap) var(--side-gap);
 }
 
 .max-width{ 

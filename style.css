@@ -24,6 +24,10 @@ section,header,footer{
     background-color: var(--bg-color);
 }
 
+.standard-padding{
+    padding: var(--vert-gap) var(--side-gap);
+}
+
 .max-width{ 
     max-width: var(--max-width);
     margin: auto;
