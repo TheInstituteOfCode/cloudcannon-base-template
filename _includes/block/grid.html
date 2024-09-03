@@ -2,7 +2,7 @@
 <section class="{% if block.top-space-collapse  == true %} pt-0 {% endif %} {% if block.bottom-space-collapse  == true %} pb-0 {% endif %}">
       <div class="max-width grid">
           {% for col in block.columns %}
-            <div class="col-w-{{col.col-width}} col-h-{{col.col-height}} relative {% if col.color-scheme %} {{col.color-scheme}} {% endif %}">
+            <div class="col-w-{{col.col-width}} col-h-{{col.col-height}} relative {% if col.color-scheme %} scheme-{{col.color-scheme}} {% endif %}">
                 <!-- {{col.col-type}} -->
                 {% case col.col-type %}
                 {% when 'img' %}
