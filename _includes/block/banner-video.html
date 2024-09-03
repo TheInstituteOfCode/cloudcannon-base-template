@@ -1,0 +1,76 @@
+
+<section class="py-0" style="text-align: {{block.text-alignment}}
+">
+      <div class="max-width {% if block.overlay-opacity > 0 %}relative z-10{% endif %}
+        flex         
+        {% case block.vert-alignment %}
+        {% when 'top' %}
+        items-start
+        {% when 'middle' %}
+        items-center
+        {% when 'bottom' %}
+        items-end
+        {% endcase %}
+
+        {% case block.text-alignment %}
+        {% when 'left' %}
+        justify-start
+        {% when 'center' %}
+        justify-center
+        {% when 'right' %}
+        justify-end
+        {% endcase %}
+        ">
+          <video class="absolute inset-0 object-cover object-center" src="" controls="flase" autoplay="true" muted>
+            {% for video in block.videos %}
+            <source src="{{video.video_path}}" type="video/{{video.video_type}}">
+            {% endfor %}
+          Your browser does not support the video tag.
+          </video>
+          <div class="{% if block.content-max-width %}max-width: {{block.content-max-width}} {% endif %}">
+            {{block.block-content-html}}
+          </div>
+    </section>
+
+    <style>
+      #section-{{forloop.index}} section {
+        background-image: url({% if block.background-mobile-image %} {{block.background-mobile-image}} {% else %} {{block.background-desktop-image}} {% endif %});
+      }
+      #section-{{forloop.index}} .max-width{
+        min-height: {{block.min-height}};
+        {% if block.top-space-padding %}
+        padding-top: {{block.top-space-padding}};
+        {% else %}
+        padding-top: var(--vert-gap);
+        {% endif %}
+        {% if block.bottom-space-padding %}
+        padding-bottom: {{block.bottom-space-padding}};
+        {% else %}
+        padding-bottom: var(--vert-gap);
+        {% endif %}
+      }
+
+      {% if block.overlay-opacity > 0 %}
+      #section-{{forloop.index}} section::before {
+        content: " ";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: {{block.overlay-color}};
+        opacity: {{block.overlay-opacity}}
+      }
+      {% endif %}
+
+      {% if block.background-mobile-image %} {% if block.background-desktop-image %}
+      @media (min-width: 765px) {
+        #section-{{forloop.index}} section {
+          
+          background-image: url( {{block.background-desktop-image}} );
+        }
+      }
+      {% endif %} {% endif %}
+
+
+    </style>
