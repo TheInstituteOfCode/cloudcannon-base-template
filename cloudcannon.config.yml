@@ -146,7 +146,7 @@ _structures:
           background-mobile-image: https://picsum.photos/id/1024/600/400
           background-alt: bg-alt
           desktop-collapse-bg-padding: true
-          desktop-image-position: 'left'
+          desktop-image-position: right
           section-gap: 1rem
           text-alignment: center
           vert-alignment: bottom
