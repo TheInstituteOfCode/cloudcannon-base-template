@@ -21,7 +21,11 @@
         --side-gap: {{site.data.style.horizontal-padding}};
         --vert-gap: {{site.data.style.vertical-padding}};
         --animation-speed: {{site.data.style.animation-speed}};
-        --small-padding: {{site.data.style.small-padding}}
+        --small-padding: {{site.data.style.small-padding}};
+    }
+
+    body{
+        --max-width-side-padding: max({{site.data.style.horizontal-padding}},  calc( calc(100vw - var(--max-width)) / 2) );
     }
     :root,{% for scheme in site.data.style.schemes %}
         .scheme-{{scheme.scheme_name}} {

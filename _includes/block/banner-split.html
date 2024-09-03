@@ -1,5 +1,5 @@
 
-<section class="px-0 flex" >
+<section class="flex px-0" >
       <div class="picture relative">
         <picture >
           <source srcset="{{block.background-desktop-image}}" media="(min-width: 750px)" />
@@ -15,7 +15,7 @@
     <style>
 
     #section-{{forloop.index}} section{
-      gap: {{block.section-gap}}
+      gap: {{block.section-gap}};
     }
 
     #section-{{forloop.index}} .text-block {
@@ -30,9 +30,9 @@
         self-end
         {% endcase %};
       {% if block.desktop-image-position == 'right' %}
-          padding-left: var(--side-gap);
+          padding-left: var(--max-width-side-padding);
         {% else %}
-          padding-right: var(--side-gap);
+          padding-right: var(--max-width-side-padding);
           order:3;
       {% endif %}
     }
@@ -45,9 +45,9 @@
 
       {% if block.desktop-collapse-bg-padding == false %}
          {% if block.desktop-image-position == 'left' %}
-          margin-left: var(--side-gap);
+          margin-left: var(--max-width-side-padding);
           {% else %}
-          margin-right: var(--side-gap);
+          margin-right: var(--max-width-side-padding);
          {% endif %}
       {% endif %}
     }
