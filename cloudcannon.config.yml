@@ -217,6 +217,7 @@ _structures:
           video_autoplay: true
           img_aspect: Square
           col-width: 1
+          col-height: 1
 
 
 # Snippet definitions are generic variables that can be referenced in snippets
