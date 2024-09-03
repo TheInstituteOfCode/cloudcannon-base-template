@@ -34,9 +34,14 @@
       grid-template-columns: repeat({{block.grid-mobile-columns}}, 1fr);
     }
 
-    #section-{{forloop.index}} .color-set{
-        padding: 0 calc( {{block.grid-gap}} / 2);
+    #section-{{forloop.index}} .col-padded{
+        padding: {{block.grid-gap}};
     }
+    {% if block.icon-width %}
+    #section-{{forloop.index}} .icon{
+max-width: min(100%, {{block.icon-width}});
+    }
+    {% endif %}
 
 
     @media (min-width: 765px) {

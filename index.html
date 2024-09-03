@@ -16,7 +16,7 @@ blocks:
     bottom-space-padding: 5vw
     color-scheme: dark
   - _id: grid
-    grid-desktop-columns: 3
+    grid-desktop-columns: 4
     grid-mobile-columns: 1
     grid-gap: 1rem
     columns:
@@ -27,14 +27,22 @@ blocks:
         col-width: 5
         col-height: 2
       - col-type: text
-        heading: Heading text
-        para: >-
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae
-          cupiditate eaque voluptatibus et aut assumenda dolores saepe
-          voluptatem non dolorem corporis eveniet suscipit vitae minima,
-          veritatis obcaecati ducimus distinctio magnam!
+        block-content-html: >-
+          <p>dan was here :D</p><p></p><h2>And it was epic</h2>
+        icon-path: https://picsum.photos/id/1023/600/400
+        icon-alt: biking
         color-scheme: featured
-        col-width: 3
+        text-alignment: center
+        col-width: 1
+        col-height: 1
+      - col-type: text
+        block-content-html: >-
+          <p>dan was here :D</p><p></p><h2>And it was epic</h2>
+        icon-path: https://picsum.photos/id/1023/600/400
+        icon-alt: biking
+        color-scheme: featured
+        text-alignment: center
+        col-width: 1
         col-height: 1
       - col-type: img
         image: https://picsum.photos/id/1023/600/400
@@ -42,9 +50,10 @@ blocks:
         img_apsect: 2
         col-width: 1
         col-height: 1
+    icon-width: 3rem
     color-scheme: dark
   - _id: banner-video
-    block-content-html: dan was here :D
+    block-content-html: <p>dan was here :D</p><p></p><h2>And it was epic</h2>
     videos:
       - video_path: /uploads/sea-24216-360p.mp4
         video_type: mp4
@@ -56,5 +65,19 @@ blocks:
     top-space-padding: 10vw
     bottom-space-padding: 5vw
     color-scheme: dark
-color-scheme: dark
+  - _id: accordion
+    block-content-html: <p>dan was here :D</p><p></p><h2>And it was epic</h2>
+    accordion:
+        - button-text: Where is dan
+          icon_path: https://picsum.photos/id/1023/600/400
+          icon_alt: bike
+          block-content-html: <p>dan was here :D</p><p>dan was here :D</p><p>dan was here :D</p><p>dan was here :D</p>
+        - button-text: Where is dan
+          block-content-html: <p>dan was here :D</p><p>dan was here :D</p><p>dan was here :D</p><p>dan was here :D</p>
+        - button-text: Where is dan
+          block-content-html: <p>dan was here :D</p><p>dan was here :D</p><p>dan was here :D</p><p>dan was here :D</p>
+        - button-text: Where is dan
+          block-content-html: <p>dan was here :D</p><p>dan was here :D</p><p>dan was here :D</p><p>dan was here :D</p>
+    max-icon-width: 3rem
+    color-scheme: dark
 ---

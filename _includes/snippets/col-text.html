@@ -1,8 +1,11 @@
-<div class="color-set" >
+<div class="color-set col-padded ">
     {% if col.icon-path %}
     <div class="flex justify-center">
-        <img src="" alt="">
+        <img class="icon" src="{{col.icon-path}}" alt="{{col.icon-alt}}">
     </div>
     {% endif %}
-{{col.block-content-html}}
+    <div style="text-align: {{col.text-alignment}};">
+        {{col.block-content-html}}
+    </div>
+
 </div>

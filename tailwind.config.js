@@ -39,9 +39,9 @@ module.exports = {
         '5p': '5%',
         '10p': '10%',
         '15p': '15%',
-      },
-      aspectRatio: {
-        '5/3': '5 / 3',
+        'small': 'var(--small-padding)',
+        'vert': 'var(--vert-gap)',
+        'side': 'var(--side-gap)'
       },
       minHeight:{
         '100': '100vh',

@@ -20,5 +20,7 @@ schemes:
     colored-button-bg-color: '#ece5dd'
     colored-button-text-color: '#9ca592'
 max-width: 1280
+animation-speed: .4s
+small-padding: 1rem
 vertical-padding: 5vw
 horizontal-padding: 5vw

@@ -20,6 +20,8 @@
         --max-width: {{site.data.style.max-width}}px;
         --side-gap: {{site.data.style.horizontal-padding}};
         --vert-gap: {{site.data.style.vertical-padding}};
+        --animation-speed: {{site.data.style.animation-speed}};
+        --small-padding: {{site.data.style.small-padding}}
     }
     :root,{% for scheme in site.data.style.schemes %}
         .scheme-{{scheme.scheme_name}} {
@@ -42,5 +44,44 @@
             <!--{{block._id}} -->
             {% include /block/{{block._id}}.html %}
         </div>
+        <!-- script check -->
+         {% if block._id == 'accordion' %}
+           {% assign hasAccordion = true %}
+         {% endif %}
     {% endfor %}
 </body>
+
+
+<script>    
+{% if hasAccordion == true %}
+    const buttons = document.querySelectorAll(".expandButton");
+  const dropSecs = document.querySelectorAll(".drop-sec");
+  
+  function getHeight(target) {
+    target.style.setProperty('--true-height',  `${target.querySelector(".content").offsetHeight}px` )
+  }
+
+  dropSecs.forEach(sec => {
+    getHeight(sec)
+  })
+
+  onresize = (event) => {
+    dropSecs.forEach(sec => {
+    getHeight(sec)
+  })
+  };
+
+
+  
+  function showMore() {
+
+      this.nextElementSibling.classList.toggle('collapsed');
+  }
+
+  buttons.forEach(button => {
+    button.addEventListener('click', showMore)
+  }
+  )
+
+  {% endif %}
+</script>

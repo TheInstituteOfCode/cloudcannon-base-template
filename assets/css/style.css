@@ -438,6 +438,9 @@ video {
 .block {
   display: block;
 }
+.inline-block {
+  display: inline-block;
+}
 .flex {
   display: flex;
 }
@@ -468,6 +471,9 @@ video {
 .justify-center {
   justify-content: center;
 }
+.border {
+  border-width: 1px;
+}
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
@@ -483,8 +489,18 @@ video {
 .pb-0 {
   padding-bottom: 0px;
 }
+.pb-vert {
+  padding-bottom: var(--vert-gap);
+}
 .pt-0 {
   padding-top: 0px;
+}
+.transition {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }
 
 
@@ -548,3 +564,15 @@ section,header,footer{
 .col-h-5{grid-row: span 5 ;}
 .col-h-6{grid-row: span 6 ;}
 .col-h-7{grid-row: span 7 ;}
+
+
+/* accordian */
+.drop-sec{
+    overflow: hidden;
+    max-height: var(--true-height);
+    transition: max-height 2s;
+   }
+
+   .drop-sec.collapsed {
+    max-height: 0;
+   }

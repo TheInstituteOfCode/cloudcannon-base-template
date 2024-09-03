@@ -67,3 +67,15 @@ section,header,footer{
 .col-h-5{grid-row: span 5 ;}
 .col-h-6{grid-row: span 6 ;}
 .col-h-7{grid-row: span 7 ;}
+
+
+/* accordian */
+.drop-sec{
+    overflow: hidden;
+    max-height: var(--true-height);
+    transition: max-height 2s;
+   }
+
+   .drop-sec.collapsed {
+    max-height: 0;
+   }
