@@ -106,7 +106,7 @@ _inputs:
         - top
         - bottom
     cascade: true
-  img_apsect:
+  img_aspect:
     type: select
     options:
       allow_empty: false
@@ -120,7 +120,7 @@ _inputs:
     cascade: true
 _structures:
   blocks:
-    style: select
+    style: model
     values:
       - label: Simple banner
         value:
@@ -152,7 +152,7 @@ _structures:
           vert-alignment: bottom
           mobile-image-position: bottom
           mobile-collapse-bg-padding: false
-          img_apsect: 1
+          img_aspect: 1
           top-space-padding: 10vw
           bottom-space-padding: 5vw
           color-scheme: dark
@@ -197,7 +197,7 @@ _structures:
           col-type: img
           image: https://picsum.photos/id/1023/600/400
           image_alt:
-          img_apsect: 1
+          img_aspect: 1
           col-width: 2
           col-height: 2
       - label: Text Block
@@ -217,8 +217,9 @@ _structures:
               video_type: mp4
           video_controls: false
           video_autoplay: true
-          img_apsect: 4/5
+          img_aspect: 4/5
           col-width: 1
+
 # Snippet definitions are generic variables that can be referenced in snippets
 # In this case, we're defining the common set of tokens that are relevant to
 # Jekyll/liquid tags. (This covers things like the `=` symbol between keys and values)
