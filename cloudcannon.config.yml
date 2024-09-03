@@ -65,7 +65,7 @@ _inputs:
   min-height:
     type: select
     cascade: true
-    option:
+    options:
       values:
         50vh: half screen min-min
         75vh: three quater screen min-min
