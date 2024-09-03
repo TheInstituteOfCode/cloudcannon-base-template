@@ -117,13 +117,13 @@ _structures:
           min-height: 90vh
           top-space-padding: 10vw
           bottom-space-padding: 5vw
-    - label: Video banner
+      - label: Video banner
         value:
           _id: banner-video
           color-scheme: dark
           block-content-html: dan was here :D
           videos:
-            - video_path: 
+            - video_path:
               video_type:
           text-alignment: center
           vert-alignment: middle
