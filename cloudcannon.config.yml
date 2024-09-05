@@ -62,6 +62,26 @@ _inputs:
       link: true
       resize_style: contain
       right: text-right
+      snippet: false
+      styles: /editor.css
+    label: Content
+    cascade: true
+content:
+    type: html
+    options:
+      allow_resize: true
+      allow_custom_markup: false
+      remove_custom_markup: false
+      initial_height: 320
+      center: text-center
+      format: p h2 h3 a img
+      horizontalrule: true
+      image: true
+      image_size_attributes: true
+      left: text-left
+      link: true
+      resize_style: contain
+      right: text-right
       snippet: true
       styles: /editor.css
     label: Content
