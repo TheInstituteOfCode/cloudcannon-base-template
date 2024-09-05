@@ -146,6 +146,15 @@ _inputs:
         - Landscape
         - Wide Landscape
     cascade: true
+# snippet inputs
+  float-direction:
+    type: select
+    options:
+      allow_empty: false
+      values:
+        - left
+        - right
+    default: left
 _structures:
   blocks:
     style: modal

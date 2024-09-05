@@ -563,7 +563,14 @@ header{
     background-color: var(--bg-color);
 }
 
+/* floating images */
 
+.float-right{
+float: right
+}
+.float-left{
+    float: left
+    }
 
 /* custom grid */
 
