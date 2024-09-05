@@ -183,7 +183,7 @@ _structures:
           top-space-padding: 10vw
           bottom-space-padding: 5vw
           color-scheme: dark
-      - label: text-block
+      - label: text block
         value:
           _id: grid
           content: 
