@@ -9,4 +9,4 @@ dan was here
 
 &nbsp;
 
-## &nbsp;{% include snippets\image-float.htm image="/uploads/screenshot-2024-08-26-094507.png" alt="" float-direction="" %} some big text
+## &nbsp;{% include snippets/image-float.html image="/uploads/screenshot-2024-08-26-094507.png" alt="" float-direction="" %} some big text [text](../_includes/snippets/imgGallery3.html)[text](../_includes/snippets/image-float.htm)
