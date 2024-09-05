@@ -22,5 +22,5 @@ schemes:
 max-width: 1280
 animation-speed: .4s
 small-padding: 1rem
-vertical-padding: 2vw
+vertical-padding: min( 5vw , 4rem)
 horizontal-padding: 5vw
