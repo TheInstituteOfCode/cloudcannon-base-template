@@ -185,7 +185,7 @@ _structures:
           color-scheme: dark
       - label: text block
         value:
-          _id: grid
+          _id: text-block
           content: 
           color-scheme: dark
       - label: Grid
