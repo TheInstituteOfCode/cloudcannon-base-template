@@ -67,7 +67,7 @@ _inputs:
     label: Content
     cascade: true
   content:
-    type: md
+    type: markdown
     options:
       allow_resize: true
       allow_custom_markup: false
