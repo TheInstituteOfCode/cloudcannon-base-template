@@ -66,6 +66,41 @@ _inputs:
       styles: /editor.css
     label: Content
     cascade: true
+  text-box:
+    type: object
+    options:
+      value:
+        pre-heading:
+        pre-heading-style:
+        heading:
+        heading-style:
+        sub-heading:
+        sub-heading-style:
+        para: 
+  pre-heading-style:
+    type: select
+    options:
+      allow_empty: true
+      values:
+        - style 1
+        - style 2
+        - style 3
+  heading-style:
+    type: select
+    options:
+      allow_empty: true
+      values:
+        - style 1
+        - style 2
+        - style 3
+  sub-heading-style:
+    type: select
+    options:
+      allow_empty: true
+      values:
+        - style 1
+        - style 2
+        - style 3
   content:
     type: markdown
     options:
@@ -176,11 +211,6 @@ _structures:
       - label: Split banner strict
         value:
           _id: banner-split-strict-version
-          text-box:
-             pre-heading:
-             heading:
-             sub-heading:
-             para: 
           background-desktop-image: https://picsum.photos/id/1023/600/400
           background-mobile-image: https://picsum.photos/id/1024/600/400
           background-alt: bg-alt

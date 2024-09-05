@@ -1,29 +1,34 @@
-{% if include.pre-heading %}
-    <h3>
-        {{include.pre-heading}}
+
+
+    {% if block.text-box.pre-heading %}
+    <h3 class="{{block.pre-heading-style}}">
+        {{block.text-box.pre-heading}}
     </h3>
-{% endif %}
-{% if include.heading %}
-    <h2>
-        {{include.heading}}
+    {% endif %}
+    {% if block.text-box.heading %}
+    <h2 class="{{block.heading-style}}">
+        {{block.text-box.heading}}
     </h2>
-{% endif %}
-{% if include.sub-heading %}
-    <h3>
-        {{include.sub-heading}}
+    {% endif %}
+    {% if block.text-box.sub-heading %}
+    <h3 class="{{block.sub-heading-style}}">
+        {{block.text-box.sub-heading}}
     </h3>
-{% endif %}
-{% if include.para %}
-<p>{{include.para}}</p>
-{% endif %}
-
-
-{% comment %}
-<!-- config settings  -->
-        text-box:
-             pre-heading:
-             heading:
-             sub-heading:
-             para: 
-
-{% endcomment %}
+    {% endif %}
+    {% if block.text-box.para %}
+    <p>{{block.text-box.para}}</p>
+    {% endif %}
+    
+    
+    {% comment %}
+    <!-- config settings  -->
+    text-box:
+        pre-heading:
+        pre-heading-style:
+        heading:
+        heading-style
+        sub-heading:
+        sub-heading-style
+        para: 
+    
+    {% endcomment %}
