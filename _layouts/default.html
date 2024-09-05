@@ -42,6 +42,17 @@
 </head>
 
 <body>
+  <div class="scheme-base relative" id="header">
+  <header>
+    <div class="max-width">
+      <nav class="text-right">
+        {% for link in site.data.navigation.header_links %}
+        <a class="inline-block p-4" href="{{link.link}}">{{link.text}}</a>
+        {% endfor %}
+      </nav>
+    </div>
+  </header>
+</div>
   {% if page.blocks %}
     {% for block in page.blocks %}
         <div class="scheme-{{block.color-scheme}} relative" id="section-{{forloop.index}}">
@@ -61,6 +72,19 @@
       </div>
     </section>
     {% endif %}
+
+
+    <div class="scheme-dark relative" id="footer">
+    <footer>
+      <div class="max-width">
+        <nav class="text-right">
+          {% for link in site.data.navigation.footer_links %}
+          <a class="inline-block p-4" href="{{link.link}}">{{link.text}}</a>
+          {% endfor %}
+        </nav>
+      </div>
+    </footer>
+  </div>
 </body>
 
 

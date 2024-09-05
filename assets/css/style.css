@@ -497,6 +497,9 @@ video {
   -o-object-position: center;
      object-position: center;
 }
+.p-4 {
+  padding: 1rem;
+}
 .px-0 {
   padding-left: 0px;
   padding-right: 0px;
@@ -513,6 +516,9 @@ video {
 }
 .pt-0 {
   padding-top: 0px;
+}
+.text-right {
+  text-align: right;
 }
 .transition {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;

@@ -1,0 +1,14 @@
+header_links:
+  - link: /
+    text: home
+  - link: /blog
+    text: blog
+  - link: /about
+    text: about
+footer_links:
+  - link: /
+    text: home
+  - link: /blog
+    text: blog
+  - link: /about
+    text: about
