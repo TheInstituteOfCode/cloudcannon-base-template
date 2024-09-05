@@ -1,0 +1,29 @@
+{% if include.pre-heading %}
+    <h3>
+        {{include.pre-heading}}
+    </h3>
+{% endif %}
+{% if include.heading %}
+    <h2>
+        {{include.heading}}
+    </h2>
+{% endif %}
+{% if include.sub-heading %}
+    <h3>
+        {{include.sub-heading}}
+    </h3>
+{% endif %}
+{% if include.para %}
+<p>{{include.para}}</p>
+{% endif %}
+
+
+{% comment %}
+<!-- config settings  -->
+        text-box:
+             pre-heading:
+             heading:
+             sub-heading:
+             para: 
+
+{% end comment %}
