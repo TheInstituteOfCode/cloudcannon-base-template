@@ -62,6 +62,7 @@ blocks:
                 video_autoplay: false
                 img_aspect: Square
                 col-width: 2
+                col-height: 1
             -
                 col-type: text
                 block-content-html: <p>quick text</p>
@@ -78,4 +79,15 @@ blocks:
                 col-width: 1
                 col-height: 2
         color-scheme: dark
+    -
+        _id: grid
+        content: >-
+            <p>dan was there</p>{% include snippets/imgGallery3.html
+            first-image="/uploads/screenshot-2024-08-26-094507.png" first-alt=""
+            second-image="/uploads/screenshot-2024-08-26-094507.png"
+            second-alt="" third-image="" third-alt="" image_size_ratio=""
+            %}<h2>{% include snippets/image-float.html
+            image="/uploads/screenshot-2024-08-26-094507.png" alt=""
+            float-direction="" %} And fun was had</h2>
+        color-scheme: base
 ---
