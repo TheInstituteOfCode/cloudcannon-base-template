@@ -121,6 +121,20 @@ _inputs:
         - top
         - bottom
     cascade: true
+  top-space-padding:
+    type: number
+    unit: vh
+    option:
+      min: 0
+      max: 100
+      step: 1
+  bottom-space-padding:
+    type: number
+    unit: vh
+    option:
+      min: 0
+      max: 100
+      step: 1
   img_aspect:
     type: select
     options:
@@ -147,8 +161,8 @@ _structures:
           overlay-color: black
           overlay-opacity: 0.5
           min-height: 90vh
-          top-space-padding: 10vw
-          bottom-space-padding: 5vw
+          top-space-padding: 10
+          bottom-space-padding: 10
           color-scheme: dark
       - label: Split banner
         value:
@@ -165,8 +179,8 @@ _structures:
           mobile-image-position: bottom
           mobile-collapse-bg-padding: false
           img_aspect: Square
-          top-space-padding: 10vw
-          bottom-space-padding: 5vw
+          top-space-padding: 10
+          bottom-space-padding: 10
           color-scheme: dark
       - label: Video banner
         value:
@@ -180,14 +194,15 @@ _structures:
           overlay-color: black
           overlay-opacity: 0.5
           min-height: 90vh
-          top-space-padding: 10vw
+          top-space-padding: 10
           bottom-space-padding: 5vw
           color-scheme: dark
       - label: text block
         value:
           _id: text-block
-          content: 
+          block-content-html: 
           color-scheme: dark
+          max-width: 
       - label: Grid
         value:
           _id: grid

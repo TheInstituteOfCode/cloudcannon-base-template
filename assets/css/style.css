@@ -545,6 +545,9 @@ section,header,footer{
     color: var(--text-color);
     background-color: var(--bg-color);
 }
+header{
+    padding: 0 var(--side-gap)
+}
 
 .standard-padding{
     padding: var(--vert-gap) var(--side-gap);

@@ -40,12 +40,12 @@
       #section-{{forloop.index}} .max-width{
         min-height: {{block.min-height}};
         {% if block.top-space-padding %}
-        padding-top: {{block.top-space-padding}};
+        padding-top: {{block.top-space-padding}}vh;
         {% else %}
         padding-top: var(--vert-gap);
         {% endif %}
         {% if block.bottom-space-padding %}
-        padding-bottom: {{block.bottom-space-padding}};
+        padding-bottom: {{block.bottom-space-padding}}vh;
         {% else %}
         padding-bottom: var(--vert-gap);
         {% endif %}

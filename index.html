@@ -11,7 +11,7 @@ blocks:
         overlay-color: '#000000'
         overlay-opacity: 0.5
         min-height: 90vh
-        top-space-padding: 10vw
+        top-space-padding: 10
         bottom-space-padding: 5vw
         color-scheme: dark
     -
@@ -28,7 +28,7 @@ blocks:
         mobile-image-position: bottom
         mobile-collapse-bg-padding: false
         img_aspect: Wide Landscape
-        top-space-padding: 10vw
+        top-space-padding: 10
         bottom-space-padding: 5vw
         color-scheme: dark
     -
@@ -43,7 +43,7 @@ blocks:
         overlay-color: '#255a2c'
         overlay-opacity: 0.5
         min-height: 50vh
-        top-space-padding: 10vw
+        top-space-padding: 10
         bottom-space-padding: 5vw
         color-scheme: featured
     -
@@ -81,15 +81,7 @@ blocks:
         color-scheme: dark
     -
         _id: text-block
-        content: >-
-            dan was there
-            {% include snippets/imgGallery3.html
-            first-image="/uploads/screenshot-2024-08-26-094507.png" first-alt=""
-            second-image="/uploads/screenshot-2024-08-26-094507.png"
-            second-alt="" third-image="" third-alt="" image_size_ratio=""
-            %}
-            ## {% include snippets/image-float.html
-            image="/uploads/screenshot-2024-08-26-094507.png" alt=""
-            float-direction="" %} And fun was had 
+        block-content-html: >-
+            <h2>dan was there And fun was had</h2>  
         color-scheme: base
 ---
