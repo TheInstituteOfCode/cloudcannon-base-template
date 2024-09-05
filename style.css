@@ -82,11 +82,6 @@ float: right
 .col-h-7{grid-row: span 7 ;}
 
 
-/* split banner */
-
-.picture picture{
-    
-}
 
 /* accordian */
 .drop-sec{
@@ -98,3 +93,36 @@ float: right
    .drop-sec.collapsed {
     max-height: 0;
    }
+
+   /* ticket banner */
+
+   
+.tickerBanner{
+    --bannerBlockLength: 280px;
+    --bannerBlockTime: 2s;
+  overflow-X: hidden;
+  display: flex;
+  flex-direction: row-reverse;
+  text-align: center;
+  }
+  
+  
+  .tickerBanner > * {
+    display: inline-block;
+    padding: 1vw;
+    flex-shrink: 0;
+    position: relative;
+  }
+  
+  .tickerBanner.active:hover > *{
+    animation-play-state: paused;
+  }
+  .tickerBanner.active > * {
+    animation: ticker 2s infinite linear;
+    animation-duration: var(--bannerBlockTime), 2s;
+  } 
+  
+  @keyframes ticker {
+      from {left:0}
+      to   {left:var(--bannerBlockLength)}
+  }

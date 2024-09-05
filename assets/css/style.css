@@ -604,11 +604,6 @@ float: right
 .col-h-7{grid-row: span 7 ;}
 
 
-/* split banner */
-
-.picture picture{
-    
-}
 
 /* accordian */
 .drop-sec{
@@ -621,7 +616,40 @@ float: right
     max-height: 0;
    }
 
-   @media (min-width: 768px) {
+   /* ticket banner */
+
+   
+.tickerBanner{
+    --bannerBlockLength: 280px;
+    --bannerBlockTime: 2s;
+  overflow-X: hidden;
+  display: flex;
+  flex-direction: row-reverse;
+  text-align: center;
+  }
+  
+  
+  .tickerBanner > * {
+    display: inline-block;
+    padding: 1vw;
+    flex-shrink: 0;
+    position: relative;
+  }
+  
+  .tickerBanner.active:hover > *{
+    animation-play-state: paused;
+  }
+  .tickerBanner.active > * {
+    animation: ticker 2s infinite linear;
+    animation-duration: var(--bannerBlockTime), 2s;
+  } 
+  
+  @keyframes ticker {
+      from {left:0}
+      to   {left:var(--bannerBlockLength)}
+  } 
+  
+  @media (min-width: 768px) {
   .md\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }

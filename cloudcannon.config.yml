@@ -279,6 +279,16 @@ _structures:
             icon_alt: bike
             block-content-html:
           color-scheme: dark
+      - label: Ticket banner
+        value:
+          _id: ticket-banner
+          banner_speed: 50px
+          banner_message:
+            - text: dan was here
+              url:
+            - text: so was bob
+              url: google.com
+          color-scheme: dark
   columns:
     style: modal
     values:
@@ -310,7 +320,7 @@ _structures:
           img_aspect: Square
           col-width: 1
           col-height: 1
-
+      
 data_config: {}
 timezone: Etc/UTC
 _snippets_definitions:

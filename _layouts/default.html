@@ -64,6 +64,10 @@
          {% if block._id == 'accordion' %}
            {% assign hasAccordion = true %}
          {% endif %}
+
+         {% if block._id == 'ticket-banner' %}
+          {% assign hasTicketBanner = true %}
+         {% endif %}
     {% endfor %}
     {% else %}
     <section>
@@ -120,4 +124,56 @@
   )
 
   {% endif %}
+  {% if hasTicketBanner == true %}
+  const tickerBanners = document.querySelectorAll('.tickerBanner');
+
+tickerBanners.forEach(banner => {
+
+
+
+  let textBlock = banner.querySelectorAll('.text-block');
+
+  console.log(textBlock[1].offsetWidth)
+
+  let bannerBlock = 0;
+  textBlock.forEach( block => {
+    bannerBlock += block.offsetWidth
+  });
+
+  let bannerLength = bannerBlock
+  console.log(bannerBlock)
+  console.log(banner.dataset.bannerSpeed)
+  
+  
+  banner.style.setProperty('--bannerBlockLength', `${bannerBlock}px`);
+  banner.style.setProperty('--bannerBlockTime', `${(bannerBlock / banner.dataset.bannerSpeed )}s`);
+
+  
+  function extendBanner() {
+  if (bannerLength < (screen.width + bannerBlock) ) {
+    textBlock.forEach(block => {
+    console.log(block.innerHTML)
+    // add the newly created element and its content into the DOM
+    banner.appendChild(block.cloneNode(true));
+    // banner.querySelector('a:last-child').innerHTML = block.innerHTML
+    // banner.querySelector('a:last-child').href = block.href
+      
+    });
+    bannerLength += bannerBlock;
+    console.log(bannerLength) 
+    extendBanner()
+  } else {
+    banner.classList.add('active')
+  }
+}
+
+
+
+  extendBanner()
+
+  console.log(bannerLength)
+
+})
+  {% endif %}
+
 </script>
