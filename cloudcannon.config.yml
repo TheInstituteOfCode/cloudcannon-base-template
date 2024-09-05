@@ -282,7 +282,7 @@ _structures:
       - label: Ticket banner
         value:
           _id: ticket-banner
-          banner_speed: 50px
+          banner_speed_in_px: 50
           banner_message:
             - text: dan was here
               url:
