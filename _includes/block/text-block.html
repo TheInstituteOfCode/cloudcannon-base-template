@@ -2,7 +2,7 @@
 <section>
       <div class="max-width" {% if block.max-width %} style="max-width: {{block.max-width}} "{% endif %}>
           <div class="">
-            {{block.content}}
+            {{block.content | markdownify }}
           </div>
       </div>
     </section>

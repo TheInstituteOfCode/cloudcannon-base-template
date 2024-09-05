@@ -67,7 +67,7 @@ _inputs:
     label: Content
     cascade: true
   content:
-    type: html
+    type: md
     options:
       allow_resize: true
       allow_custom_markup: false
@@ -301,7 +301,7 @@ _snippets:
     preview:
       text: floating image
     definitions:
-      include_name: snippets/image-float.html
+      include_name: snippets\image-float.htm
       named_args:
         - editor_key: image
           type: string
