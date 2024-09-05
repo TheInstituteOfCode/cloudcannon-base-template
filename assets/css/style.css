@@ -572,6 +572,9 @@ float: right
     float: left
     }
 
+    .post-content > * {
+        clear: both;
+    }
 /* custom grid */
 
 

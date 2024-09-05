@@ -333,3 +333,5 @@ _snippets:
           type: string
         - editor_key: float-direction
           type: string
+        - editor_key: max-width
+          type: string

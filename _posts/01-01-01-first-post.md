@@ -9,4 +9,6 @@ dan was here
 
 &nbsp;
 
-## &nbsp; {% include snippets/image-float.html image="/uploads/screenshot-2024-08-26-094507.png" alt="" float-direction="" %}some big text
+## &nbsp; {% include snippets/image-float.html image="/uploads/screenshot-2024-08-26-094507.png" alt="" float-direction="left" max-width="3rem" %}some big text
+
+quick text
