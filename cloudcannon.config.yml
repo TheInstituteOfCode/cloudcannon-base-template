@@ -211,6 +211,7 @@ _structures:
       - label: Split banner strict
         value:
           _id: banner-split-strict-version
+          text-box:
           background-desktop-image: https://picsum.photos/id/1023/600/400
           background-mobile-image: https://picsum.photos/id/1024/600/400
           background-alt: bg-alt
