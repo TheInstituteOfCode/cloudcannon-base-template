@@ -216,7 +216,7 @@ _structures:
           _id: accordion
           block-content-html:
           drop_down:
-            button-text: Where is dan
+          - button-text: Where is dan
             icon_path: https://picsum.photos/id/1023/600/400
             icon_alt: bike
             block-content-html:
