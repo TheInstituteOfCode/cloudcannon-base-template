@@ -316,7 +316,7 @@ _snippets:
     preview:
       text: floating image
     definitions:
-      include_name: snippets\image-float.html
+      include_name: snippets/image-float.html
       named_args:
         - editor_key: image
           type: string
