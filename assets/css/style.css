@@ -474,6 +474,9 @@ video {
 .justify-center {
   justify-content: center;
 }
+.gap-4 {
+  gap: 1rem;
+}
 .self-start {
   align-self: flex-start;
 }
