@@ -1,14 +1,15 @@
 
 <section class="px-0">
   <div class="tickerBanner" data-banner-speed="{{block.banner_speed_in_px}}">
+    
     {% for message in block.banner_message %}
-    {% if message.url %}
-      <a href="{{message.url}}" class="text-block">{{message.text}}</a>
+      {% if message.url %}
+        <a href="{{message.url}}" class="text-block">{{message.text}}</a>
       {% else %}
-      <span class="text-block">{{message.text}}</span>
-
+        <span class="text-block">{{message.text}}</span>
       {% endif %}
-      {% endfor %}
+    {% endfor %}
+
   </div>
 </section>
 

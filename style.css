@@ -113,10 +113,11 @@ float: right
     flex-shrink: 0;
     position: relative;
   }
-  
-  .tickerBanner.active:hover > *{
+  /* for pause on hover works but is very jumpy */
+  /* .tickerBanner.active:hover > *{
     animation-play-state: paused;
-  }
+  } */
+
   .tickerBanner.active > * {
     animation: ticker 2s infinite linear;
     animation-duration: var(--bannerBlockTime), 2s;
