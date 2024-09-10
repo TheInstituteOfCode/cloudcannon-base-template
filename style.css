@@ -22,6 +22,7 @@ section,header,footer{
     background-position: center;
     color: var(--text-color);
     background-color: var(--bg-color);
+    
 }
 header{
     padding: 0 var(--side-gap)
