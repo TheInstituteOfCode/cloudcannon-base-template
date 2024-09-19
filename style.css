@@ -128,3 +128,14 @@ float: right
       from {left:0}
       to   {left:var(--bannerBlockLength)}
   }
+
+  /* horizontal scroll section */
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}

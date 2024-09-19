@@ -435,6 +435,12 @@ video {
 .z-10 {
   z-index: 10;
 }
+.ml-full-side {
+  margin-left: var(--max-width-side-padding);
+}
+.mr-full-side {
+  margin-right: var(--max-width-side-padding);
+}
 .block {
   display: block;
 }
@@ -455,6 +461,12 @@ video {
 }
 .w-full {
   width: 100%;
+}
+.shrink-0 {
+  flex-shrink: 0;
+}
+.flex-nowrap {
+  flex-wrap: nowrap;
 }
 .items-start {
   align-items: flex-start;
@@ -486,6 +498,9 @@ video {
 .self-center {
   align-self: center;
 }
+.overflow-scroll {
+  overflow: scroll;
+}
 .border {
   border-width: 1px;
 }
@@ -503,6 +518,10 @@ video {
 .px-0 {
   padding-left: 0px;
   padding-right: 0px;
+}
+.px-side {
+  padding-left: var(--side-gap);
+  padding-right: var(--side-gap);
 }
 .py-0 {
   padding-top: 0px;
@@ -544,6 +563,7 @@ section,header,footer{
     background-position: center;
     color: var(--text-color);
     background-color: var(--bg-color);
+    
 }
 header{
     padding: 0 var(--side-gap)
@@ -648,9 +668,19 @@ float: right
   @keyframes ticker {
       from {left:0}
       to   {left:var(--bannerBlockLength)}
-  } 
-  
-  @media (min-width: 768px) {
+  }
+
+  /* horizontal scroll section */
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+@media (min-width: 768px) {
   .md\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }

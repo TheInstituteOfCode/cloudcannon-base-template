@@ -1,0 +1,29 @@
+
+<section class="px-0">
+  <div class="px-side">
+      <div class="max-width">
+          <h2>
+            {{block.heading}}
+          </h2>
+
+        </div>
+      </div>
+      <div class="gap-4 flex flex-nowrap overflow-scroll no-scrollbar" {% if block.max-width %} style="max-width: {{block.max-width}} "{% endif %}>
+
+
+        {% for col in block.scroll-items %}
+        <div class="shrink-0 {% if forloop.first  %} ml-full-side {% endif %} {% if forloop.last  %} mr-full-side {% endif %}" style="width: {{block.image-width}};">
+          {% if col.link %}<a href="{{col.link}}">{% endif%}
+          <img src="https://picsum.photos/id/1025/600/400" alt="">
+          <h3>{{col.heading}}</h3>
+          <p>
+            {{col.description | truncatewords: 13, "..." }}
+          </p>
+          {% if col.link %}</a>{% endif%}
+
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+
+

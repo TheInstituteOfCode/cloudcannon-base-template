@@ -41,7 +41,8 @@ module.exports = {
         '15p': '15%',
         'small': 'var(--small-padding)',
         'vert': 'var(--vert-gap)',
-        'side': 'var(--side-gap)'
+        'side': 'var(--side-gap)',
+        'full-side': 'var(--max-width-side-padding)'
       },
       minHeight:{
         '100': '100vh',

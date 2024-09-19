@@ -1,0 +1,15 @@
+
+<section>
+      <div class="max-width" {% if block.max-width %} style="max-width: {{block.max-width}} "{% endif %}>
+          <div class="">
+          
+            {% for post in site.posts %}
+            <div>
+              {{post.title}}
+            </div>
+            {% endfor %}
+          </div>
+      </div>
+    </section>
+
+
