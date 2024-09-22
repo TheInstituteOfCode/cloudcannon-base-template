@@ -115,46 +115,79 @@
   </header>
 </div>
 
-<!-- {% include block/horizontal-scroll-basic.html %} -->
   {% if page.blocks %}
-    {% for block in page.blocks %}
+    
+  {% for block in page.blocks %}
         <div class="scheme-{{block.color-scheme}} relative" id="section-{{forloop.index}}">
-            {% comment %} to figure out what block you added in inspect {% endcomment %}
+          {% comment %} to figure out what block you added in inspect {% endcomment %}
             <!--{{block._id}} -->
             {% include /block/{{block._id}}.html %}
         </div>
         <!-- script check -->
-         {% if block._id == 'accordion' %}
-           {% assign hasAccordion = true %}
-         {% endif %}
+        {% if block._id == 'accordion' %}
+          {% assign hasAccordion = true %}
+        {% endif %}
 
-         {% if block._id == 'ticket-banner' %}
+        {% if block._id == 'ticket-banner' %}
           {% assign hasTicketBanner = true %}
-         {% endif %}
-         {% if block._id == 'slider' %}
-         {% assign hasSlider = true %}
-       {% endif %}
+        {% endif %}
+        {% if block._id == 'slider' %}
+        {% assign hasSlider = true %}
+      {% endif %}
     {% endfor %}
-    {% else %}
+
+  {% else %}
     <section>
       <div class="max-width">
         {{content}}
       </div>
     </section>
-    {% endif %}
+  {% endif %}
 
 
-    <div class="scheme-dark relative" id="footer">
+  <div class="scheme-dark relative" id="footer">
     <footer>
-      <div class="max-width">
-        <nav class="text-right">
-          {% for link in site.data.navigation.footer_links %}
-          <a class="inline-block p-4" href="{{link.link}}">{{link.text}}</a>
+      <div class="max-width grid gap-side">
+        <div class="">
+            <a href="/">
+              <img style="max-width: min({{site.data.navigation.footer-logo-size}}, 100%)" src="{{site.data.navigation.logo_image}}" alt="{{site.data.navigation.logo_alt}}">
+            </a>
+          <nav class="flex justify-between">
+            {% for link in site.data.navigation.footer_social_links %}
+            <a class="inline-block p-4" href="{{link.link}}">
+              <img src="{{link.icon_link}}" alt="">
+            </a>
+            {% endfor %}
+
+          </nav>
+        </div>
+        <div class="flex justify-around">
+          {% for nav in site.data.navigation.footer_nav_bars %}
+          <nav>
+            {% for link in nav.links %}
+            <a class="block" href="{{link.link}}">{{link.text}}</a>
+            {% endfor %}
+          </nav>
           {% endfor %}
-        </nav>
+        </div>
+        <div>
+          <!-- placeholder form -->
+           <h3>Sign up to our newsletter</h3>
+           <form action="" class="flex">
+             <input type="email" placeholder="EMAIL">
+             <input class="shrink-0" type="submit" value="SUBMIT">
+           </form>
+        </div>
       </div>
     </footer>
   </div>
+
+  <style>
+    #footer .grid {
+      grid-template-columns: {{site.data.navigation.footer-logo-size}} 1fr 1fr;
+    }
+  </style>
+
 </body>
 
 {{hasSlider}}

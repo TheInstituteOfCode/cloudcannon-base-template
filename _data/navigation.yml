@@ -15,10 +15,33 @@ header_links:
     text: blog
   - link: /about
     text: about
-footer_links:
+footer-logo-size: 150px
+footer_social_links:
   - link: /
-    text: home
-  - link: /blog
-    text: blog
-  - link: /about
-    text: about
+    social: instagram
+    icon_link: /uploads/star.svg
+  - link: /
+    social: facebook
+    icon_link: /uploads/star.svg
+  - link: /
+    social: X
+    icon_link: /uploads/star.svg
+footer_nav_bars: 
+  - links:
+      - text: sublink 1
+        link: /
+      - text: sublink 1
+        link: /
+      - text: sublink 1
+        link: /
+      - text: sublink 1
+        link: /
+  - links:
+      - text: sublink 1
+        link: /
+      - text: sublink 1
+        link: /
+      - text: sublink 1
+        link: /
+      - text: sublink 1
+        link: /

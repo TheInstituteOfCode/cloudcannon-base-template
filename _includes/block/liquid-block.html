@@ -1,10 +1,10 @@
 
-<section>
-      <div class="max-width">
-          <div class="">
-            {{block.liquid_html}}
-          </div>
-      </div>
-    </section>
+<section class="{% if block.cape-width == false %} px-0 {% endif %} {% if block.vertical-padding == false %} py-0 {% endif %} ">
+  <div class="{% if block.cape-width == true %} max-width {% endif %}">
+    <div class="">
+      {{block.liquid_code}}
+    </div>
+  </div>
+</section>
 
 

@@ -447,9 +447,6 @@ video {
 .z-10 {
   z-index: 10;
 }
-.col-span-2 {
-  grid-column: span 2 / span 2;
-}
 .-mx-small {
   margin-left: calc(var(--small-padding) * -1);
   margin-right: calc(var(--small-padding) * -1);
@@ -541,8 +538,17 @@ video {
 .justify-between {
   justify-content: space-between;
 }
+.justify-around {
+  justify-content: space-around;
+}
 .gap-4 {
   gap: 1rem;
+}
+.gap-small {
+  gap: var(--small-padding);
+}
+.gap-side {
+  gap: var(--side-gap);
 }
 .self-start {
   align-self: flex-start;
