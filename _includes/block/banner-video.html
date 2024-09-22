@@ -1,6 +1,6 @@
 
 <section class="py-0" style="text-align: {{block.text-alignment}};">
-    <video width="320" height="240" class="absolute inset-0 h-full w-full object-cover object-center" controls="false" autoplay="true" muted>
+    <video width="320" height="240" class="absolute inset-0 h-full w-full object-cover object-center" {% if block.controls == true %} controls {% endif %} {% if block.autoplay == true %}autoplay="" muted {% endif %}>
       {% for video in block.videos %}
       <source src="{{video.video_path}}" type="video/{{video.video_type}}">
       {% endfor %}
