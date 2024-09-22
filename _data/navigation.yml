@@ -1,6 +1,16 @@
+logo_image: /uploads/screenshot-2024-08-26-094507.png
+logo_alt: Logo
+header_logo_width: 4rem
 header_links:
   - link: /
     text: home
+    sub_links:
+      - text: sublink 1
+        link: /
+      - text: sublink 2
+        link: /
+      - text: sublink 3
+        link: /
   - link: /blog
     text: blog
   - link: /about

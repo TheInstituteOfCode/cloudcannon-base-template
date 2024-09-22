@@ -62,12 +62,46 @@
 <body>
   <div class="scheme-base relative" id="header">
   <header>
-    <div class="max-width">
-      <nav class="text-right">
+    <div class="max-width flex justify-between items-center">
+      <div class="flex-1">
+        <a href="/">
+          <img style="max-width: min({{site.data.navigation.header_logo_width}}, 100%)" src="{{site.data.navigation.logo_image}}" alt="{{site.data.navigation.logo_alt}}">
+        </a>
+      </div>
+      <nav class="text-right hidden right-0 top-0 md:block shrink-0">
         {% for link in site.data.navigation.header_links %}
-        <a class="inline-block  p-4 {% if forloop.last %} pr-0 {% endif %}" href="{{link.link}}">{{link.text}}</a>
-        {% endfor %}
+        <span 
+        class="inline-block drop-finder p-4 {% if forloop.last %} pr-0 {% endif %}
+        {% if link.sub_links %}
+          relative
+        {% endif %}
+        "
+          >
+            <a href="{{link.link}}">{{link.text}}</a>
+            {% if link.sub_links %}
+              <div class="absolute left-0 top-12 z-10 drop-down color-set min-w-min hidden">
+                {% for sub-link in link.sub_links %}
+                  <a class="block whitespace-nowrap p-4" href="{{sub-link.link}}">{{sub-link.text}}</a>
+                {% endfor %}
+              </div>
+            {% endif %}
+
+      </span>
+
+          {% endfor %}
       </nav>
+      <div class="md:hidden">
+        <div class="burger-button">
+          <span class="burger-top"></span>
+          <span class="burger-middle"></span>
+          <span class="burger-bottom"></span>
+      </div>
+       <div class="burger-menu">
+         <a href="">Home</a>
+         <a href="">Food</a>
+         <a href="">Drink</a>
+      </div>
+      </div>
     </div>
   </header>
 </div>
@@ -112,22 +146,22 @@
 </body>
 
 
-<script>    
-{% if hasAccordion == true %}
-    const buttons = document.querySelectorAll(".expandButton");
-  const dropSecs = document.querySelectorAll(".drop-sec");
-  
-  function getHeight(target) {
-    target.style.setProperty('--true-height',  `${target.querySelector(".content").offsetHeight}px` )
+<script>
+
+function passHeightUp(target) {
+    target.parentElement.style.setProperty('--true-height',  `${target.offsetHeight}px` )
   }
+{% if hasAccordion == true %}
+  const buttons = document.querySelectorAll(".expandButton");
+  const dropSecs = document.querySelectorAll(".drop-sec");
 
   dropSecs.forEach(sec => {
-    getHeight(sec)
+    passHeightUp(target.querySelector(".content"))
   })
 
   onresize = (event) => {
     dropSecs.forEach(sec => {
-    getHeight(sec)
+      passHeightUp(target.querySelector(".content"))
   })
   };
 

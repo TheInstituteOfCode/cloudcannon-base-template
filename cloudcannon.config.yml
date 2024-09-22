@@ -375,7 +375,25 @@ _structures:
           img_aspect: Square
           col-width: 1
           col-height: 1
-      
+  header_links:
+    style: modal
+    values:
+      - label: simple link
+        value:
+          link: /
+          text: home
+      - label: link with sublinks
+        value:
+          text: home
+          link: /
+          sub_links:
+            - text: sublink 1
+              link: /
+            - text: sublink 2
+              link: /
+            - text: sublink 3
+              link: /
+
 data_config: {}
 timezone: Etc/UTC
 _snippets_definitions:
