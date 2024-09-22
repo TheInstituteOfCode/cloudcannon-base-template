@@ -1,13 +1,13 @@
 
 <section>
-  <div class="max-width" {% if block.max-width %} style="max-width: {{block.max-width}} "{% endif %}>
+  <div class="max-width">
       <div class="grid gap-4">
-        <div class="{% if block.video-orientation == 'horizontal' %} col-span-2 {% endif %} relative" style="aspect-ratio: {{block.video-aspect}} ;">
+        <div class="relative col-w-{{block.video-col-width}}" style="aspect-ratio: {{block.video-aspect}} ;">
           {{block.embed_code}}
         </div>
 
-        <div class="{% if block.video-orientation == 'vertical' %} col-span-2 {% endif %} text-block">
-          {% include snippets/text-box.html include="block.text-box" %}
+        <div class="text-box col-w-{{block.block-content-width}}">
+          {{block.block-content-html}}
        </div>
       </div>
   </div>
@@ -15,8 +15,21 @@
 
 
 <style>
+  @media (max-width: 768px)  {
+    #section-{{forloop.index}} .grid{
+    display: block;
+    }
+  }
       #section-{{forloop.index}} .grid{
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat({{block.video-col-width}}, 1fr) repeat({{block.block-content-width}}, 1fr);
+      {% case block.vert-alignment %}
+          {% when 'top' %}
+          align-items: normal ;
+          {% when 'middle' %}
+          align-items: center;
+          {% when 'bottom' %}
+          align-self: end;
+          {% endcase %};
     }
     #section-{{forloop.index}} iframe{
       position: absolute;

@@ -450,9 +450,6 @@ video {
 .col-span-2 {
   grid-column: span 2 / span 2;
 }
-.float-left {
-  float: left;
-}
 .-mx-small {
   margin-left: calc(var(--small-padding) * -1);
   margin-right: calc(var(--small-padding) * -1);
@@ -851,6 +848,13 @@ float: right
 
   body .slick-next::before, body .slick-prev::before{
     font-family: inherit;
+  }
+
+  .star-aligner img {
+    float: left;
+  }
+  .star-aligner > * {
+    clear: both;
   }
   /* horizontal scroll section */
 

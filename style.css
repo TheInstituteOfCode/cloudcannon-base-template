@@ -241,6 +241,13 @@ float: right
   body .slick-next::before, body .slick-prev::before{
     font-family: inherit;
   }
+
+  .star-aligner img {
+    float: left;
+  }
+  .star-aligner > * {
+    clear: both;
+  }
   /* horizontal scroll section */
 
   .no-scrollbar::-webkit-scrollbar {
