@@ -44,10 +44,10 @@ header{
 
 /* floating images */
 
-.float-right{
+.float-images-right img{
 float: right
 }
-.float-left{
+.float-images-left img{
     float: left
     }
 

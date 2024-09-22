@@ -5,3 +5,12 @@ h1.page-main-heading{
 h2.larger-heading{
     font-size: 9rem;
 }
+
+
+p.float-images-right{
+    color: inherit;
+}
+
+p.float-images-left{
+    color: inherit;
+}
