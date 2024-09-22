@@ -291,7 +291,7 @@ _structures:
                 - image: https://picsum.photos/id/685/1200/630
                   block-content-html: <h3> lorem </h3><h2>  experiences  </h2>
                   link: base
-            color-scheme: dark
+          color-scheme: dark
       - label: Grid
         value:
           _id: grid
