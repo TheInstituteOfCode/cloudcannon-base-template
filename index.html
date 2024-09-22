@@ -18,9 +18,16 @@ blocks:
         top-space-padding: 10
         bottom-space-padding: 5
         color-scheme: dark
-    - 
+    -
         _id: youtube
-        embed_code: <iframe width="560" height="315" src="https://www.youtube.com/embed/gvFsQqvB4cM?si=8wJ1Xm2ZbpvMQD9A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        embed_code: >-
+            <iframe width="560" height="315"
+            src="https://www.youtube.com/embed/gvFsQqvB4cM?si=8wJ1Xm2ZbpvMQD9A"
+            title="YouTube video player" frameborder="0" allow="accelerometer;
+            autoplay; clipboard-write; encrypted-media; gyroscope;
+            picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen></iframe>
         video-aspect: 560/315
         video-col-width: 2
         block-content-html: >-
@@ -28,7 +35,7 @@ blocks:
             src="/uploads/star.svg" /><img src="/uploads/star.svg" /><img
             src="/uploads/star.svg" /><img src="/uploads/star.svg" /></p><p>Dan
             was here</p>
-        block-content-width:  1
+        block-content-width: 1
         vert-alignment: middle
         color-scheme: base
     -
@@ -113,6 +120,14 @@ blocks:
         top-space-padding: 0
         bottom-space-padding: 0
         color-scheme: dark
+    -
+        _id: liquid-block
+        liquid_html: >-
+            <p>&lt;iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3944.494647487761!2d115.12809509999998!3d-8.6444149!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd247a13066d977%3A0x467f2ebcb0fb76ef!2sHair%20by%20therapy!5e0!3m2!1sen!2sau!4v1726985453546!5m2!1sen!2sau"
+            width="600" height="450" style="border:0;" allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"&gt;&lt;/iframe&gt;</p>
 seo:
     title: advanced title
     description: advanced description
