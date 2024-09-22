@@ -1,10 +1,46 @@
 
 <section>
-      <div class="max-width {% if text-align == 'left' %} ml-0 {% endif %}" {% if block.max-width %} style="max-width: {{block.max-width}} "{% endif %}>
-          <div class="">
+      <div class="max-width">
+          <div class="
+          {% case block.text-align %}
+          {% when 'left' %}
+          mr-auto
+          {% when 'center' %}
+           mx-auto text-center
+          {% when 'right' %}
+          ml-auto text-right
+          {% endcase %}
+          " {% if block.text-box-max-width %} style="max-width: min({{block.text-box-max-width}}, 100%) "{% endif %}>
+           
             {{block.block-content-html }}
+          </div>
+          <div class="scheme-{{block.slider_col_color_scheme}} -mx-small slider mb-vert">
+            {% for col in block.slider %}
+            <div class="p-small h-full">
+              <div class="color-set">
+                {% if col.image %}
+                <div class="image-sizer relative">
+                  <img class="absolute inset-0 object-cover object-center h-full w-full" src="{{col.image}}" alt="">
+                </div>
+                {% endif %}
+                <div class="p-small">
+
+                  <span class="star float-left">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="{{include.max-width}}" height="{{include.max-width}}" viewBox="0 0 15 15" fill="none">
+                        <path d="M7.70137 0.216785L9.19554 4.71469H14.0671C14.3784 4.71469 14.5185 5.10844 14.2539 5.29018L10.3162 8.07676L11.8259 12.5747C11.9193 12.8624 11.5769 13.1047 11.3278 12.923L7.39009 10.1515L3.45234 12.9381C3.20332 13.1199 2.84534 12.8776 2.95429 12.5898L4.46402 8.0919L0.526275 5.30381C0.277247 5.12207 0.401761 4.72832 0.713045 4.72832H5.58464L7.0788 0.216785C7.17219 -0.0709596 7.60799 -0.0709596 7.70137 0.216785Z" fill="#3E3E3E"/>
+                        </svg>
+                </span>    
+                </div>
+              </div>
+            </div>
+            {% endfor %}
           </div>
       </div>
     </section>
 
 
+    <style>
+      #section-{{forloop.index}} .image-sizer {
+      aspect-ratio: {% include logic/aspect-logic.html aspect = block.img_aspect %} ;
+    }
+  </style>

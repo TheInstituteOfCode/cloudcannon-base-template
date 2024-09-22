@@ -450,12 +450,29 @@ video {
 .col-span-2 {
   grid-column: span 2 / span 2;
 }
+.float-left {
+  float: left;
+}
+.m-small {
+  margin: var(--small-padding);
+}
+.-mx-small {
+  margin-left: calc(var(--small-padding) * -1);
+  margin-right: calc(var(--small-padding) * -1);
+}
 .mx-full-side {
   margin-left: var(--max-width-side-padding);
   margin-right: var(--max-width-side-padding);
 }
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
 .mb-small {
   margin-bottom: var(--small-padding);
+}
+.mb-vert {
+  margin-bottom: var(--vert-gap);
 }
 .ml-0 {
   margin-left: 0px;
@@ -463,8 +480,17 @@ video {
 .ml-full-side {
   margin-left: var(--max-width-side-padding);
 }
+.ml-small {
+  margin-left: var(--small-padding);
+}
 .mr-full-side {
   margin-right: var(--max-width-side-padding);
+}
+.ml-auto {
+  margin-left: auto;
+}
+.mr-auto {
+  margin-right: auto;
 }
 .block {
   display: block;
@@ -559,6 +585,9 @@ video {
 .p-4 {
   padding: 1rem;
 }
+.p-small {
+  padding: var(--small-padding);
+}
 .px-0 {
   padding-left: 0px;
   padding-right: 0px;
@@ -582,6 +611,12 @@ video {
 }
 .pt-0 {
   padding-top: 0px;
+}
+.pb-small {
+  padding-bottom: var(--small-padding);
+}
+.text-center {
+  text-align: center;
 }
 .text-right {
   text-align: right;
@@ -690,7 +725,7 @@ float: right
     z-index: 9;
     padding: 8px;
   }
-  /*this is where you can chand the color of the buttons*/
+  /*this is where you can change the color of the buttons*/
   .burger-button span{
     width: 40px;
     border: 2px solid black;
@@ -699,10 +734,11 @@ float: right
     border-radius: 22px;
     transition: 2s;
   }
-  .burger-button.active span{
+/* burger button active color */
+  /* .burger-button.active span{
     border-color: green;
     background-color:#383;
-  }
+  } */
   
   .burger-top, .burger-bottom{
     position: absolute;
@@ -737,26 +773,22 @@ float: right
   }
   
   .burger-menu {
-      display: flex;
-      position: fixed;
-      top: 0vh;
-      left:100vw;
-      right: -100vw;
-      bottom: 0vh;
-      background-color: #f9f9f9;
-      padding:5px;
-      box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.1);
-      z-index: 8;
+    position: fixed;
+    top: 0vh;
+    padding-top: var(--vert-gap);
+    left:100vw;
+    right: -100vw;
+    bottom: 0vh;
+    padding:5px;
+    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.1);
+    z-index: 8;
     transition:1s;
-      align-content:space-around;
-    justify-content:space-around;
-    flex-direction:column;
   }
   .burger-menu.active{
     left:50vw;
     right:0;
   }
-  
+
   .burger-menu a {
     text-decoration: none;
     font-size: 20px;
@@ -765,7 +797,7 @@ float: right
     font-family: 'Alegreya Sans SC', sans-serif;
     display:block;
     padding:5px 15px;
-    text-align:center;
+    /* text-align:center; */
     white-space:nowrap;
   }
   
@@ -773,7 +805,7 @@ float: right
 /* accordian */
 .drop-sec{
     overflow: hidden;
-    max-height: var(--true-height);
+    max-height: calc(var(--true-height) + calc(var(--small-padding * 2)));
     transition: max-height 2s;
    }
 
@@ -815,6 +847,23 @@ float: right
       to   {left:var(--bannerBlockLength)}
   }
 
+
+  /* slider */
+
+  body .slick-prev,body .slick-next {
+    top: 100%;
+    z-index: 99;
+  }
+  body .slick-prev {
+  left: var(--small-padding);
+  }
+  body .slick-next {
+  right: var(--small-padding);
+  }
+
+  body .slick-next::before, body .slick-prev::before{
+    font-family: inherit;
+  }
   /* horizontal scroll section */
 
   .no-scrollbar::-webkit-scrollbar {

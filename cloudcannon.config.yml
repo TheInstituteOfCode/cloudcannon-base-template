@@ -201,7 +201,7 @@ _structures:
           min-height: 90vh
           top-space-padding: 10
           bottom-space-padding: 10
-          color-scheme: dark
+          color-scheme: base
       - label: Split banner strict
         value:
           _id: banner-split-strict-version
@@ -265,7 +265,8 @@ _structures:
           _id: text-block
           block-content-html: 
           color-scheme: dark
-          max-width: 
+          max-width:
+          color-scheme: base
       - label: Grid
         value:
           _id: grid
@@ -298,6 +299,7 @@ _structures:
               image: https://picsum.photos/id/684/1200/630
               description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab corporis obcaecati doloremque optio! Unde accusantium, esse consectetur asperiores voluptates obcaecati nobis libero necessitatibus vero labore quod eaque. Illum, tenetur alias!
               link: #
+          color-scheme: base
       - label: Horizontal scroll grid with inline text box
         value:  
           _id: horizontal-scroll-inline-text-box
@@ -323,7 +325,7 @@ _structures:
               image: https://picsum.photos/id/684/1200/630
               description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab corporis obcaecati doloremque optio! Unde accusantium, esse consectetur asperiores voluptates obcaecati nobis libero necessitatibus vero labore quod eaque. Illum, tenetur alias!
               link: #
-
+          color-scheme: base
       - label: Accordion
         value:
           _id: accordion

@@ -96,10 +96,19 @@
           <span class="burger-middle"></span>
           <span class="burger-bottom"></span>
       </div>
-       <div class="burger-menu">
-         <a href="">Home</a>
-         <a href="">Food</a>
-         <a href="">Drink</a>
+       <div class="burger-menu color-set">
+        {% for link in site.data.navigation.header_links %}
+        <a  href="{{link.link}}">{{link.text}}</a>
+        {% if link.sub_links %}
+          <div class="ml-small">
+            {% for sub-link in link.sub_links %}
+              <a class="block whitespace-nowrap p-4" href="{{sub-link.link}}">{{sub-link.text}}</a>
+            {% endfor %}
+          </div>
+        {% endif %}
+
+
+          {% endfor %}
       </div>
       </div>
     </div>
@@ -122,6 +131,9 @@
          {% if block._id == 'ticket-banner' %}
           {% assign hasTicketBanner = true %}
          {% endif %}
+         {% if block._id == 'slider' %}
+         {% assign hasSlider = true %}
+       {% endif %}
     {% endfor %}
     {% else %}
     <section>
@@ -145,30 +157,63 @@
   </div>
 </body>
 
+{{hasSlider}}
+
+{% if hasSlider == true %}
+<!-- slick css -->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!-- slick js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js" integrity="sha512-eP8DK17a+MOcKHXC5Yrqzd8WI5WKh6F1TIk5QZ/8Lbv+8ssblcz7oGC8ZmQ/ZSAPa7ZmsCU4e/hcovqR8jfJqA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+{% endif %}
+
+
+
 
 <script>
 
+
+// universal functions
+
 function passHeightUp(target) {
-    target.parentElement.style.setProperty('--true-height',  `${target.offsetHeight}px` )
+    target.parentElement.parentElement.style.setProperty('--true-height',  `${target.offsetHeight}px` )
   }
+
+
+// burger menu
+
+  const burgerButton = document.querySelector('.burger-button');
+  const burgerMenu = document.querySelector('.burger-menu')
+
+
+
+function toggleBurger() {
+  burgerButton.classList.toggle('active')
+  burgerMenu.classList.toggle('active')
+}
+
+burgerButton.addEventListener('click', toggleBurger)
+
 {% if hasAccordion == true %}
   const buttons = document.querySelectorAll(".expandButton");
   const dropSecs = document.querySelectorAll(".drop-sec");
 
   dropSecs.forEach(sec => {
-    passHeightUp(target.querySelector(".content"))
+    passHeightUp(sec.querySelector(".content"))
   })
 
   onresize = (event) => {
     dropSecs.forEach(sec => {
-      passHeightUp(target.querySelector(".content"))
+      passHeightUp(sec.querySelector(".content"))
   })
-  };
 
+  };
 
   
   function showMore() {
-
       this.nextElementSibling.classList.toggle('collapsed');
   }
 
@@ -230,4 +275,28 @@ tickerBanners.forEach(banner => {
 })
   {% endif %}
 
+
+  addEventListener("load", (event) => {
+
+    console.log('pageloaded')
+    
+    {% for block in page.blocks %}
+    
+    {% if block._id == 'slider' %}
+    
+         $('#section-{{forloop.index}} .slider').slick({
+           dots: false,
+           arrows: true,
+           slidesToShow: {{block.slider_column_count}},
+           slidesToScroll: 1,
+           dragable: true,
+           infinite: true,
+           speed: 500,
+           fade: false,
+           cssEase: 'linear'
+          });
+          
+          {% endif %}
+          {% endfor %}
+});
 </script>

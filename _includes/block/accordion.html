@@ -1,12 +1,12 @@
 
 <section>
-      <div class="max-width" {% if block.max-width %} style="max-width: {{block.max-width}} "{% endif %}>
-          <div class=" pb-vert">
+      <div class="max-width">
+          <div class=" pb-small">
             {{block.block-content-html}}
           </div>
         
           <div >
-            {% for drop in block.accordion %}
+            {% for drop in block.drop_down %}
             <div >
               <div class="expandButton">
                 <img class="icon inline-block" src="{{drop.icon_path}}" alt="{{drop.icon_alt}}">
