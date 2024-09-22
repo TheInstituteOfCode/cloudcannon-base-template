@@ -1,34 +1,41 @@
 
-<section class="px-0 ">
-  <div class="px-side">
-      <div class="max-width">
-          <h2>
-            {{block.heading}}
-          </h2>
+<section class="px-0 grid">
+  <div class="px-full-side md:pl-0">
+      <div>
+            {{block.block-content-html}}
       </div>
     </div>
     <div class="gap-4 flex flex-nowrap overflow-scroll no-scrollbar" {% if block.max-width %} style="max-width: {{block.max-width}} "{% endif %}>
 
 
       {% for col in block.scroll-items %}
-        <div class="shrink-0 {% if forloop.first  %} ml-full-side {% endif %} {% if forloop.last  %} mr-full-side {% endif %}" style="width: {{block.image-width}};">
+        <div class="shrink-0 {% if forloop.first  %} ml-full-side md:ml-0 {% endif %} {% if forloop.last  %} mr-full-side {% endif %}" style="width: {{block.image-width}};">
           {% if col.link %}<a href="{{col.link}}">{% endif%}
             <div class="image-sizer">
               <img class="object-cover object-center {{block.img_aspect}}" src="https://picsum.photos/id/1025/600/400" alt="">
             </div>
+
           <h3>{{col.heading}}</h3>
-          <p>
-            {{col.description | truncatewords: 13, "..." }}
-          </p>
           {% if col.link %}</a>{% endif%}
         </div>
       {% endfor %}
     </div>
   </section>
 
-
 <style>
-    #section-{{forloop.index}} .image-sizer {
+
+
+  
+  @media (min-width: 768px) {
+  
+  #section-{{forloop.index}} .grid {
+    grid-template-columns: {{block.text-box-width}} 1fr;
+  }
+
+  #section-{{forloop.index}} .image-sizer {
     aspect-ratio: {% include logic/aspect-logic.html aspect = block.img_aspect %} ;
   }
+
+}
+
 </style>

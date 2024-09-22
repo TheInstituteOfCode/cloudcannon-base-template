@@ -170,6 +170,11 @@ _inputs:
         - Landscape
         - Wide Landscape
     cascade: true
+  video-orientation:
+    type: select
+    options: 
+      - vertical
+      - horizontal
 # snippet inputs
   float-direction:
     type: select
@@ -273,7 +278,9 @@ _structures:
         value:  
           _id: horizontal-scroll-basic
           heading: block heading
+          block-content-html: <h3> lorem </h3> <h2>  experiences  </h2> 
           image-width: 250px
+          img_aspect: square
           scroll-items:
           -   heading: first
               image: https://picsum.photos/id/684/1200/630
@@ -291,6 +298,32 @@ _structures:
               image: https://picsum.photos/id/684/1200/630
               description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab corporis obcaecati doloremque optio! Unde accusantium, esse consectetur asperiores voluptates obcaecati nobis libero necessitatibus vero labore quod eaque. Illum, tenetur alias!
               link: #
+      - label: Horizontal scroll grid with inline text box
+        value:  
+          _id: horizontal-scroll-inline-text-box
+          heading: block heading
+          block-content-html: <h3> lorem </h3> <h2>  experiences  </h2> 
+          text-box-width: 350px
+          image-width: 250px
+          img_aspect: square
+          scroll-items:
+          -   heading: first
+              image: https://picsum.photos/id/684/1200/630
+              description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab corporis obcaecati doloremque optio! Unde accusantium, esse consectetur asperiores voluptates obcaecati nobis libero necessitatibus vero labore quod eaque. Illum, tenetur alias!
+              link: #
+          -   heading: second
+              image: https://picsum.photos/id/684/1200/630
+              description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab corporis obcaecati doloremque optio! Unde accusantium, esse consectetur asperiores voluptates obcaecati nobis libero necessitatibus vero labore quod eaque. Illum, tenetur alias!
+              link: #
+          -   heading: third
+              image: https://picsum.photos/id/684/1200/630
+              description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab corporis obcaecati doloremque optio! Unde accusantium, esse consectetur asperiores voluptates obcaecati nobis libero necessitatibus vero labore quod eaque. Illum, tenetur alias!
+              link: #
+          -   heading: fourth
+              image: https://picsum.photos/id/684/1200/630
+              description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab corporis obcaecati doloremque optio! Unde accusantium, esse consectetur asperiores voluptates obcaecati nobis libero necessitatibus vero labore quod eaque. Illum, tenetur alias!
+              link: #
+
       - label: Accordion
         value:
           _id: accordion

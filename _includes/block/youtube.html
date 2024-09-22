@@ -1,0 +1,28 @@
+
+<section>
+  <div class="max-width" {% if block.max-width %} style="max-width: {{block.max-width}} "{% endif %}>
+      <div class="grid gap-4">
+        <div class="{% if block.video-orientation == 'horizontal' %} col-span-2 {% endif %} relative" style="aspect-ratio: {{block.video-aspect}} ;">
+          {{block.embed_code}}
+        </div>
+
+        <div class="{% if block.video-orientation == 'vertical' %} col-span-2 {% endif %} text-block">
+          {% include snippets/text-box.html include="block.text-box" %}
+       </div>
+      </div>
+  </div>
+</section>
+
+
+<style>
+      #section-{{forloop.index}} .grid{
+      grid-template-columns: repeat(3, 1fr);
+    }
+    #section-{{forloop.index}} iframe{
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+    }
+</style>
