@@ -21,7 +21,7 @@
         justify-end
         {% endcase %}
         ">
-          <div class="{% if block.content-max-width %}max-width: {{block.content-max-width}} {% endif %}">
+          <div style="{% if block.content-max-width %}max-width: {{block.content-max-width}} {% endif %}">
             {{block.block-content-html}}
           </div>
     </section>
@@ -32,12 +32,12 @@
       }
       #section-{{forloop.index}} .max-width{
         min-height: {{block.min-height}};
-        {% if block.top-space-padding %}
+        {% if block.top-space-padding == '0' %}
         padding-top: {{block.top-space-padding}};
         {% else %}
         padding-top: var(--vert-gap);
         {% endif %}
-        {% if block.bottom-space-padding %}
+        {% if block.bottom-space-padding == '0' %}
         padding-bottom: {{block.bottom-space-padding}};
         {% else %}
         padding-bottom: var(--vert-gap);
