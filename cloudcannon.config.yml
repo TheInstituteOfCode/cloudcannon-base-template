@@ -315,6 +315,10 @@ _structures:
           grid-gap: 1rem
           columns:
           color-scheme: dark
+      - label: html block
+        value: 
+          _id: liquid-block
+          liquid_html: 
       - label: Horizontal scroll grid
         value:  
           _id: horizontal-scroll-basic
