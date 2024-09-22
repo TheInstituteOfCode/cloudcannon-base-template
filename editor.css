@@ -9,8 +9,10 @@ h2.larger-heading{
 
 p.float-images-right{
     color: inherit;
+    min-height: 15px;
 }
 
 p.float-images-left{
     color: inherit;
+    min-height: 15px;
 }
