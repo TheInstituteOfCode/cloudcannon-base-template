@@ -65,7 +65,7 @@
     <div class="max-width">
       <nav class="text-right">
         {% for link in site.data.navigation.header_links %}
-        <a class="inline-block p-4" href="{{link.link}}">{{link.text}}</a>
+        <a class="inline-block  p-4 {% if forloop.last %} pr-0 {% endif %}" href="{{link.link}}">{{link.text}}</a>
         {% endfor %}
       </nav>
     </div>
