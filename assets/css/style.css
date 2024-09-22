@@ -859,6 +859,9 @@ float: right
   .star-aligner > * {
     clear: both;
   }
+  .text-box > * {
+    clear: both;
+  }
   /* horizontal scroll section */
 
   .no-scrollbar::-webkit-scrollbar {
